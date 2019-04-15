@@ -1,2 +1,2 @@
-# pulic
+# public
 Projects For Sharing
