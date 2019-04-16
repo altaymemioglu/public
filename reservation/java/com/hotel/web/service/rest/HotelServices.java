@@ -1,21 +1,18 @@
 package com.hotel.web.service.rest;
 
-import java.util.Calendar;
-
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.QueryParam;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.hotel.config.ApplicationSpringConfiguration;
 import com.hotel.reservation.Reception;
-import com.hotel.reservation.data.Runner;
 
 @Path("/services")
-public class WelcomeService {
-
+public class HotelServices {
 	private ApplicationContext ctx = new AnnotationConfigApplicationContext(ApplicationSpringConfiguration.class);
 
 	@GET
@@ -27,16 +24,10 @@ public class WelcomeService {
 	}
 
 	@GET
-	@Path("/today")
-	public Response getDate() {
-		return Response.status(200).entity(Calendar.getInstance().getTime().toString()).build();
-	}
-	
-	@GET
 	@Path("/createroom")
-	public Response createRoom() {
-		Runner runner = new Runner();
-		runner.createRoom();
+	public Response createRoom(@QueryParam("floor") int floor, @QueryParam("number") int number) {
+		Reception reception = ctx.getBean(Reception.class);
+		reception.createRoom(floor,number);
 		return Response.status(200).entity("Room created!").build();
 	}
 }

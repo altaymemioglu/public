@@ -1,4 +1,4 @@
-package com.hotel.reservation.data;
+package com.hotel.hibernate;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -6,7 +6,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-public class HibernateSessionFactory {
+public class HotelSessionFactory {
 	private static SessionFactory sessionFactory;
 	static {
 		try {
