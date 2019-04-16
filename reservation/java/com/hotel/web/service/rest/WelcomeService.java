@@ -11,6 +11,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.hotel.config.ApplicationSpringConfiguration;
 import com.hotel.reservation.Reception;
+import com.hotel.reservation.data.Runner;
 
 @Path("/services")
 public class WelcomeService {
@@ -29,5 +30,13 @@ public class WelcomeService {
 	@Path("/today")
 	public Response getDate() {
 		return Response.status(200).entity(Calendar.getInstance().getTime().toString()).build();
+	}
+	
+	@GET
+	@Path("/createroom")
+	public Response createRoom() {
+		Runner runner = new Runner();
+		runner.createRoom();
+		return Response.status(200).entity("Room created!").build();
 	}
 }

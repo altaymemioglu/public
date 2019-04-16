@@ -1,0 +1,25 @@
+-- Download postgresql from https://www.enterprisedb.com/download-postgresql-binaries;
+-- Unzip it;
+-- Open a cmd;
+-- Enter into the ‘bin’ directory;
+-- Init the database:
+-- initdb.exe -D ../data –username=postgres –auth=trust
+-- Start the database:
+-- pg_ctl.exe start -D ../data
+-- Open another cmd;
+-- Enter into the ‘bin’ directory;
+-- Log into the database:
+-- psql –username=postgres
+-- Create a password for your user:
+-- ALTER USER postgres WITH PASSWORD ‘VeryVerySecret’;
+-- Install adminpack extension:
+-- CREATE EXTENSION adminpack;
+
+--Download and install pgAdmin 4
+--http://127.0.0.1:58002/browser/#
+
+--Download JDBC PostgreSQL driver 
+
+select * from information_schema.tables
+
+select * from "ROOM"
