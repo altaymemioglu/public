@@ -67,19 +67,32 @@
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-server</artifactId>
-			<version>1.8</version>
+			<version>${com.sun.jersey.version}</version>
 		</dependency>
 
 		<dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-json</artifactId>
+			<version>${com.sun.jersey.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
 			<version>${org.slf4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>angularjs</artifactId>
+			<version>1.5.4</version>
 		</dependency>
 
 	</dependencies>
 
 	<properties>
 		<javac.version>1.8</javac.version>
+		<com.sun.jersey.version>1.8</com.sun.jersey.version>
 		<org.springframework.version>5.0.2.RELEASE</org.springframework.version>
 		<org.hibernate.version>5.4.2.Final</org.hibernate.version>
 		<org.slf4j.version>1.7.26</org.slf4j.version>

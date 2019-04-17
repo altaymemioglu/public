@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.Session;
 
@@ -27,6 +28,9 @@ public class Room implements Serializable {
 
 	@Column(name = "floor")
 	private int floor;
+	
+	@Transient
+	private boolean checked;
 
 	public int getId() {
 		return id;
@@ -52,7 +56,15 @@ public class Room implements Serializable {
 		this.floor = floor;
 	}
 
-	public static void create(Session session,int floor,int number) {
+	public boolean isChecked() {
+		return checked;
+	}
+
+	public void setChecked(boolean checked) {
+		this.checked = checked;
+	}
+
+	public static Room create(Session session,int floor,int number) {
 		Room room = new Room();
 		room.setFloor(floor);
 		room.setNumber(number);
@@ -60,5 +72,12 @@ public class Room implements Serializable {
 		session.beginTransaction();
 		session.save(room);
 		session.getTransaction().commit();
+		
+		return room;
+	}
+	
+	@Override
+	public String toString() {
+		return "Room [id=" + id + ",floor=" + floor + ", number=" + number + "]";
 	}
 }
