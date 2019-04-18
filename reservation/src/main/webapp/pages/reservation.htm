@@ -1,0 +1,27 @@
+<p>{{msg}}</p>
+
+<div data-ng-controller="roomCtrl">
+		<div style="border: 1px solid blue;"></div>
+		<table border="1">
+			<thead>
+				<tr>
+					<th><input type="checkbox"
+						data-ng-model="allItemsSelected"
+						data-ng-change="selectAll()"></th>
+					<th>Id</th>
+					<th>Floor</th>
+					<th>Number</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-ng-repeat="room in rooms"
+					data-ng-class="{selected: room.checked}">
+					<td><input type="checkbox" data-ng-model="room.checked"
+						data-ng-change="selectRoom()"></td>
+					<th>{{room.id}}</th>
+					<th>{{room.floor}}</th>
+					<th>{{room.number}}</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
