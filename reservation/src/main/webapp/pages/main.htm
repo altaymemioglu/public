@@ -20,7 +20,7 @@
 
 	<div id="supportingText">
 		<div id="explanation">
-			<h3><span>Currently viewing:</span></h3>
+			<h3><span>Currently Viewing:</span></h3>
 			<div data-ng-view>
 				
 			</div>
@@ -74,15 +74,15 @@ app.config(function($routeProvider) {
 });
 
 app.controller("reservationCtrl", function ($scope) {
-    $scope.msg = "Reservation";
+    $scope.msg = "Reservation >";
 });
 
 app.controller("checkinCtrl", function ($scope) {
-    $scope.msg = "Check In";
+    $scope.msg = "Check In >";
 });
 
 app.controller("checkoutCtrl", function ($scope) {
-    $scope.msg = "Check Out";
+    $scope.msg = "Check Out >";
 });
 
 app.controller("welcomeCtrl", function ($scope,$http) {
