@@ -1,5 +1,9 @@
 Project Name: Hotel Reservation System
 Used:
-	REST Web Services
-	Spring
+	JAX-RS
+	Jersey
+	SpringBeans
+	SpringMVC
 	Hibernate
+	AngularJS
+	CSS

@@ -5,7 +5,7 @@
 <web-app>
 	<display-name>Archetype Created Web Application</display-name>
 	<servlet>
-		<servlet-name>jersey-serlvet</servlet-name>
+		<servlet-name>jersey-servlet</servlet-name>
 		<servlet-class>
 			com.sun.jersey.spi.container.servlet.ServletContainer
 		</servlet-class>
@@ -20,8 +20,21 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
+	<servlet>
+        <servlet-name>spring</servlet-name>
+            <servlet-class>
+                org.springframework.web.servlet.DispatcherServlet
+            </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
 	<servlet-mapping>
-		<servlet-name>jersey-serlvet</servlet-name>
+		<servlet-name>jersey-servlet</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
+ 
+    <servlet-mapping>
+        <servlet-name>spring</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
 </web-app>

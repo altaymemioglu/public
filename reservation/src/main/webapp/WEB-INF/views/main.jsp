@@ -2,7 +2,7 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-<link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="<c:url value='/css/style.css' />"/>
 <body data-ng-app="hotel">
 
 <div id="container">
@@ -60,15 +60,15 @@ var app = angular.module("hotel", ["ngRoute"]);
 app.config(function($routeProvider) {
     $routeProvider
     .when("/reservation", {
-        templateUrl : "reservation.htm",
+        templateUrl : "reservation.do",
         controller : "reservationCtrl"
     })
     .when("/checkout", {
-        templateUrl : "checkout.htm",
+        templateUrl : "checkout.do",
         controller : "checkoutCtrl"
     })
     .when("/checkin", {
-        templateUrl : "checkin.htm",
+        templateUrl : "checkin.do",
         controller : "checkinCtrl"
     });
 });

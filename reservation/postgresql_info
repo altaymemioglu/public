@@ -23,3 +23,5 @@
 select * from information_schema.tables
 
 select * from "ROOM"
+
+pg_ctl.exe stop -D ../data -m immediate
