@@ -5,7 +5,7 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="<c:url value='/css/style.css' />"/>
+<link rel="stylesheet" href='../reservation/css/style.css'/>
 <body>
 <div id="container">
 	<div id="intro">

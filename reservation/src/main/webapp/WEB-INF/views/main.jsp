@@ -2,7 +2,7 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-<link rel="stylesheet" type="text/css" href="<c:url value='/css/style.css' />"/>
+<link rel="stylesheet" href='../reservation/css/style.css'/>
 <body data-ng-app="hotel">
 
 <div id="container">
