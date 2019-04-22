@@ -1,4 +1,4 @@
-package com.hotel.web.service.rest;
+package com.hotel.rest;
 
 import java.util.List;
 
