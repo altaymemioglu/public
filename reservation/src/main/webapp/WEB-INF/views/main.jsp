@@ -1,3 +1,5 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page session="true"%>
 <!DOCTYPE html>
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
@@ -25,18 +27,6 @@
 				
 			</div>
 		</div>
-
-		<div id="participation">
-
-		</div>
-
-		<div id="benefits">
-
-		</div>
-		<div id="footer">
-
-		</div>
-
 	</div>
 
 	
@@ -60,15 +50,15 @@ var app = angular.module("hotel", ["ngRoute"]);
 app.config(function($routeProvider) {
     $routeProvider
     .when("/reservation", {
-        templateUrl : "reservation.do",
+        templateUrl : "reservation",
         controller : "reservationCtrl"
     })
     .when("/checkout", {
-        templateUrl : "checkout.do",
+        templateUrl : "checkout",
         controller : "checkoutCtrl"
     })
     .when("/checkin", {
-        templateUrl : "checkin.do",
+        templateUrl : "checkin",
         controller : "checkinCtrl"
     });
 });

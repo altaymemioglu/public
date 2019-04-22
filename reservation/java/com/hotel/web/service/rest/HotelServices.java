@@ -11,14 +11,14 @@ import javax.ws.rs.core.MediaType;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.hotel.config.ApplicationSpringConfiguration;
+import com.hotel.config.SpringAppConfig;
 import com.hotel.reservation.Reception;
 import com.hotel.reservation.data.Message;
 import com.hotel.reservation.data.Room;
 
 @Path("/services")
 public class HotelServices {
-	private ApplicationContext ctx = new AnnotationConfigApplicationContext(ApplicationSpringConfiguration.class);
+	private ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringAppConfig.class);
 
 	@GET
 	@Path("/welcome")//localhost:8080/reservation/rest/services/welcome
