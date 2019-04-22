@@ -1,4 +1,4 @@
-package com.hotel.reservation;
+package com.hotel.app;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ import javax.persistence.criteria.Root;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import com.hotel.hibernate.HotelSessionFactory;
-import com.hotel.reservation.data.Message;
-import com.hotel.reservation.data.Room;
+import com.hotel.app.data.Message;
+import com.hotel.app.data.Room;
+import com.hotel.hibernate.SessionFactoryDelegate;
 
 public class Reception {
 	
@@ -22,7 +22,7 @@ public class Reception {
 	}
 
 	public Room createRoom(int floor,int number) {
-		SessionFactory sessionFactory = HotelSessionFactory.getSessionFactory();
+		SessionFactory sessionFactory = SessionFactoryDelegate.getSessionFactory();
 		Session session = sessionFactory.openSession();
 		Room newRoom = Room.create(session, floor, number);
 		session.close();
@@ -30,7 +30,7 @@ public class Reception {
 	}
 	
 	public List<Room> getRoom(Integer... id){
-		SessionFactory sessionFactory = HotelSessionFactory.getSessionFactory();
+		SessionFactory sessionFactory = SessionFactoryDelegate.getSessionFactory();
 		Session session = sessionFactory.openSession();
 	    CriteriaBuilder builder = session.getCriteriaBuilder();
 	    CriteriaQuery<Room> query = builder.createQuery(Room.class);

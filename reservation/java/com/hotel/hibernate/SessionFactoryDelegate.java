@@ -1,13 +1,12 @@
 package com.hotel.hibernate;
 
-import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-public class HotelSessionFactory {
-	private static SessionFactory sessionFactory;
+public class SessionFactoryDelegate {
+	private static org.hibernate.SessionFactory sessionFactory;
 	static {
 		try {
 			StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder()
@@ -20,7 +19,7 @@ public class HotelSessionFactory {
 		}
 	}
 
-	public static SessionFactory getSessionFactory() {
+	public static org.hibernate.SessionFactory getSessionFactory() {
 
 		return sessionFactory;
 

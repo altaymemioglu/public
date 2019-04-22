@@ -1,4 +1,4 @@
-package com.hotel.reservation.data;
+package com.hotel.app.data;
 
 import java.io.Serializable;
 

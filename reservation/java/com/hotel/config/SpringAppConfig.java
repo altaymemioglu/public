@@ -3,7 +3,7 @@ package com.hotel.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.hotel.reservation.Reception;
+import com.hotel.app.Reception;
 
 @Configuration
 public class SpringAppConfig {
