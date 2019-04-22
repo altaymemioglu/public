@@ -4,6 +4,7 @@ Used:
 	Jersey
 	SpringBeans
 	SpringMVC
+	SpringWebSecurity
 	Hibernate
 	AngularJS
 	CSS
