@@ -1,4 +1,4 @@
-package com.hotel.config.web;
+package com.hotel.config.init;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -6,12 +6,13 @@ import javax.servlet.ServletRegistration;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.DispatcherServlet;
 
 import com.hotel.config.SpringWebConfig;
 import com.sun.jersey.spi.container.servlet.ServletContainer;
 
-public class SpringWebServletConfiguration implements WebApplicationInitializer {
+public class SpringWebAppInitializer implements WebApplicationInitializer {
 	public void onStartup(ServletContext ctx) throws ServletException {
 		
 		AnnotationConfigWebApplicationContext webCtx = new AnnotationConfigWebApplicationContext();
@@ -26,6 +27,9 @@ public class SpringWebServletConfiguration implements WebApplicationInitializer 
 		jerseyDispatcherServlet.setLoadOnStartup(1);
 		jerseyDispatcherServlet.setInitParameter("com.sun.jersey.config.property.packages", "com.hotel.rest");
 		jerseyDispatcherServlet.setInitParameter("com.sun.jersey.api.json.POJOMappingFeature", "true");
-		jerseyDispatcherServlet.addMapping("/rest/*");		
+		jerseyDispatcherServlet.addMapping("/rest/*");	
+		
+		ctx.addFilter("springSecurityFilterChain", new DelegatingFilterProxy("springSecurityFilterChain"))
+        .addMappingForUrlPatterns(null, false, "/*");
 	}
 }
