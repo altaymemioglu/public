@@ -1,4 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@page session="true"%>
 <!DOCTYPE html>
 <html>
@@ -38,6 +39,14 @@
 					<li><a href="#!reservation">Reservation</a></li>
 					<li><a href="#!checkin">Check In</a></li>
 					<li><a href="#!checkout">Check Out</a></li>
+					<li>
+					  <form id="logoutform" action="/reservation/logout" method="post">
+					     <input type="hidden"
+					            name="${_csrf.parameterName}"
+					            value="${_csrf.token}"/>
+	                     <a href="javascript:{}" onclick="document.getElementById('logoutform').submit(); return false;">Log Out</a>
+					  </form>
+					</li>
 				</ul>
 			</div>
 		</div>

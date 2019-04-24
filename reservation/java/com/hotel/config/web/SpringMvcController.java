@@ -39,5 +39,4 @@ public class SpringMvcController {
 		return model;
 
 	}
-
 }
