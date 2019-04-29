@@ -29,6 +29,12 @@ public class Room implements Serializable {
 	@Column(name = "floor")
 	private int floor;
 	
+	@Column(name = "capacity")
+	private int capacity;
+	
+	@Column(name = "attribute")
+	private String attribute;
+	
 	@Transient
 	private boolean checked;
 
@@ -64,10 +70,28 @@ public class Room implements Serializable {
 		this.checked = checked;
 	}
 
-	public static Room create(Session session,int floor,int number) {
+	public int getCapacity() {
+		return capacity;
+	}
+
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+
+	public String getAttribute() {
+		return attribute;
+	}
+
+	public void setAttribute(String attribute) {
+		this.attribute = attribute;
+	}
+
+	public static Room create(Session session,int floor,int number,int capacity,String attribute) {
 		Room room = new Room();
 		room.setFloor(floor);
 		room.setNumber(number);
+		room.setCapacity(capacity);
+		room.setAttribute(attribute);
 
 		session.beginTransaction();
 		session.save(room);
@@ -78,6 +102,6 @@ public class Room implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "Room [id=" + id + ",floor=" + floor + ", number=" + number + "]";
+		return "Room [id=" + id + ",floor=" + floor + ", number=" + number + ", capacity=" + capacity + ", attribute=" + attribute + "]";
 	}
 }

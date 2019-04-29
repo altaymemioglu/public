@@ -1,127 +1,68 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
-<%@page session="true"%>
 <!DOCTYPE html>
-<html>
+<html data-ng-app="hotel">
+
+<head>
+<script data-require="jquery@*" data-semver="3.2.1"	src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<link data-require="bootstrap@*" data-semver="4.1.3" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+<script data-require="bootstrap@*" data-semver="4.1.3" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-<link rel="stylesheet" href='../reservation/css/style.css'/>
-<body data-ng-app="hotel">
+<script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<script src="script/hotel-angular.js"></script>
+</head>
+<body
+	background="https://www.htihospitality.tech/wp-content/uploads/2017/09/google-hotel-background-landing-page2.png">
+	<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+		<div class="container">
+			<a href="../reservation/main" class="navbar-brand">Paradise Hotel</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarResponsive" aria-controls="navbarResponsive"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav">
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
+						id="themes">Menu <span class="caret"></span></a>
+						<div class="dropdown-menu" aria-labelledby="themes">
+							<a class="dropdown-item" href="../reservation/main">Default</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#!checkin">CheckIn</a>
+							<a class="dropdown-item" href="#!checkout">CheckOut</a>
+							<a class="dropdown-item" href="#!reservation">Reservation</a>
+							<a class="dropdown-item" href="#!customer">Customer</a>
+						</div></li>
+					<li class="nav-item"><a class="nav-link" href="#!help">Help</a>
+					</li>
+				</ul>
 
-<div id="container">
-	<div id="intro">
-		<div id="pageHeader" data-ng-controller="welcomeCtrl">
-			<h1><span>{{welcome.text}}</span></h1>
-		</div>
-
-		<div id="preamble">
-			<h3><span>What is Paradise Hotel?</span></h3>
-			<p class="p2"><span>Paradise Hotel is a web based demo application which uses RESTfull web services and AngularJS. It stores data within PostgreSQL using Hibernate. Implemented on Spring framework.</span></p>
-		</div>
-		
-	</div>
-
-	<div id="supportingText">
-		<div id="explanation">
-			<h3><span>Currently Viewing:</span></h3>
-			<div data-ng-view>
+				<ul class="nav navbar-nav ml-auto">
+					<li class="nav-item">
+						<form id="logoutform" action="/reservation/logout" method="post">
+							<input type="hidden" name="${_csrf.parameterName}"
+								value="${_csrf.token}" /> <a class="nav-link"
+								href="javascript:{}"
+								onclick="document.getElementById('logoutform').submit(); return false;">Log
+								Out</a>
+						</form>
+					</li>
+				</ul>
 				
 			</div>
 		</div>
 	</div>
 
-	
-	<div id="linkList">
-		<div id="linkList2">
-		<p><h1>Paradise Hotel</h1>
-			<div id="lselect">
-				<ul>
-					<li><a href="#!reservation">Reservation</a></li>
-					<li><a href="#!checkin">Check In</a></li>
-					<li><a href="#!checkout">Check Out</a></li>
-					<li>
-					  <form id="logoutform" action="/reservation/logout" method="post">
-					     <input type="hidden"
-					            name="${_csrf.parameterName}"
-					            value="${_csrf.token}"/>
-	                     <a href="javascript:{}" onclick="document.getElementById('logoutform').submit(); return false;">Log Out</a>
-					  </form>
-					</li>
-				</ul>
+	<div class="bs-docs-section clearfix">
+		<div class="row">
+			<div class="col-sm-6">
+				<div data-ng-view></div>
 			</div>
 		</div>
 	</div>
 
-</div>
+	<script>
 
-<script>
-var app = angular.module("hotel", ["ngRoute"]);
-app.config(function($routeProvider) {
-    $routeProvider
-    .when("/reservation", {
-        templateUrl : "reservation",
-        controller : "reservationCtrl"
-    })
-    .when("/checkout", {
-        templateUrl : "checkout",
-        controller : "checkoutCtrl"
-    })
-    .when("/checkin", {
-        templateUrl : "checkin",
-        controller : "checkinCtrl"
-    });
-});
-
-app.controller("reservationCtrl", function ($scope) {
-    $scope.msg = "Reservation >";
-});
-
-app.controller("checkinCtrl", function ($scope) {
-    $scope.msg = "Check In >";
-});
-
-app.controller("checkoutCtrl", function ($scope) {
-    $scope.msg = "Check Out >";
-});
-
-app.controller("welcomeCtrl", function ($scope,$http) {
-    	$http({
-		method : 'GET',
-		url : 'http://localhost:8080/reservation/rest/services/welcome'
-	}).then(function successCallback(response) {
-		$scope.welcome = response.data;
-	});
-});
-
-app.controller('roomCtrl', function ($scope,$http) {
-
-	$http({
-		method : 'GET',
-		url : 'http://localhost:8080/reservation/rest/services/getallrooms'
-	}).then(function successCallback(response) {
-		$scope.rooms = response.data;
-	});
-		
-     $scope.allItemsSelected = false;
-
-     $scope.selectRoom = function () {
-         for (var i = 0; i < $scope.rooms.length; i++) {
-             if (!$scope.rooms[i].checked) {
-                 $scope.allItemsSelected = false;
-                 return;
-             }
-         }
-         $scope.allItemsSelected = true;
-     };
-
-     $scope.selectAll = function () {
-
-         for (var i = 0; i < $scope.rooms.length; i++) {
-             $scope.rooms[i].checked = $scope.allItemsSelected;
-         }
-     };
-});
 </script>
-
 </body>
 </html>

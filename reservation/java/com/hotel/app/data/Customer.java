@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "checkout")
+@Table(name = "customer")
 public class Customer implements Serializable{
 	private static final long serialVersionUID = 1L;
 
@@ -30,4 +30,50 @@ public class Customer implements Serializable{
 	
 	@Column(name = "addressid")
 	private int addressid;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public int getAddressid() {
+		return addressid;
+	}
+
+	public void setAddressid(int addressid) {
+		this.addressid = addressid;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ",name=" + name + ", surname=" + surname + ", addressid=" + addressid + ", phone=" + phone + "]";
+	}
+	
 }

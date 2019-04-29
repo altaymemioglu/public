@@ -24,6 +24,14 @@ public class SpringMvcController {
 
 	}
 	
+	@RequestMapping(value = { "/bootstrap" }, method = RequestMethod.GET)
+	public ModelAndView bootstrap() {
+		ModelAndView model = new ModelAndView();
+		model.setViewName("bootstrap");
+		return model;
+
+	}
+	
 	@RequestMapping(value = { "/checkout" }, method = RequestMethod.GET)
 	public ModelAndView checkoutPage() {
 		ModelAndView model = new ModelAndView();

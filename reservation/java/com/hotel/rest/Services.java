@@ -12,6 +12,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.hotel.app.Reception;
+import com.hotel.app.data.Customer;
 import com.hotel.app.data.Message;
 import com.hotel.app.data.Room;
 import com.hotel.config.SpringAppConfig;
@@ -31,9 +32,10 @@ public class Services {
 	@GET
 	@Path("/createroom") //localhost:8080/reservation/rest/services/createroom?floor=1&number=4
 	@Produces(MediaType.APPLICATION_JSON)
-	public Room createRoom(@QueryParam("floor") int floor, @QueryParam("number") int number) {
+	public Room createRoom(@QueryParam("floor") int floor, @QueryParam("number") int number,
+			@QueryParam("capacity") int capacity, @QueryParam("attribute") String attribute) {
 		Reception reception = ctx.getBean(Reception.class);
-		Room newRoom = reception.createRoom(floor,number);
+		Room newRoom = reception.createRoom(floor,number,capacity,attribute);
 		return newRoom;
 	}
 	
@@ -44,5 +46,14 @@ public class Services {
 		Reception reception = ctx.getBean(Reception.class);
 		List<Room> rooms = reception.getRoom();
 		return rooms;
+	}
+	
+	@GET
+	@Path("/getallcustomers") //http://localhost:8080/reservation/rest/services/getallcustomers
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Customer> getAllCustomers() {
+		Reception reception = ctx.getBean(Reception.class);
+		List<Customer> customers = reception.getCustomer();
+		return customers;
 	}
 }
