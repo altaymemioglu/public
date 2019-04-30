@@ -8,7 +8,13 @@
 <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-<script src="script/hotel-angular.js"></script>
+<script src="script/module.js"></script>
+<script src="script/checkinController.js"></script>
+<script src="script/checkoutController.js"></script>
+<script src="script/customerController.js"></script>
+<script src="script/helpController.js"></script>
+<script src="script/reservationController.js"></script>
+<script src="script/welcomeController.js"></script>
 </head>
 <body
 	background="https://www.htihospitality.tech/wp-content/uploads/2017/09/google-hotel-background-landing-page2.png">
