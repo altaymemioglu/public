@@ -14,7 +14,7 @@
 	background="https://www.htihospitality.tech/wp-content/uploads/2017/09/google-hotel-background-landing-page2.png">
 	<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
 		<div class="container">
-			<a href="../reservation/main" class="navbar-brand">Paradise Hotel</a>
+			<a href="#!welcome" class="navbar-brand">Paradise Hotel</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarResponsive" aria-controls="navbarResponsive"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +26,7 @@
 						class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
 						id="themes">Menu <span class="caret"></span></a>
 						<div class="dropdown-menu" aria-labelledby="themes">
-							<a class="dropdown-item" href="../reservation/main">Default</a>
+							<a class="dropdown-item" href="#!welcome">Default</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="#!checkin">CheckIn</a>
 							<a class="dropdown-item" href="#!checkout">CheckOut</a>

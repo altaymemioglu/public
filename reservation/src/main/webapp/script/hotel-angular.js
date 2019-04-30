@@ -22,9 +22,15 @@ app.config(function($routeProvider) {
         templateUrl : "help",
         controller : "helpCtrl"
     })
+    .when("/welcome", {
+        templateUrl : "welcome",
+        controller : "welcomeCtrl"
+    })
+    .otherwise({redirectTo: '/welcome'});
     ;
 });
 
+app.controller('welcomeCtrl', function ($scope,$http) {});
 app.controller('customerCtrl', function ($scope,$http) {});
 app.controller('checkinCtrl', function ($scope,$http) {});
 app.controller('checkoutCtrl', function ($scope,$http) {});
