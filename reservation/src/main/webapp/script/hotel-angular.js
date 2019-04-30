@@ -26,7 +26,9 @@ app.config(function($routeProvider) {
         templateUrl : "welcome",
         controller : "welcomeCtrl"
     })
-    .otherwise({redirectTo: '/welcome'});
+    .otherwise({
+    	redirectTo : "welcome"
+    })
     ;
 });
 

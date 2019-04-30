@@ -9,19 +9,17 @@ import org.springframework.web.servlet.ModelAndView;
 public class SpringMvcController {
 	
 	@RequestMapping(value = { "/main" }, method = RequestMethod.GET)
-	public ModelAndView main() {
+	public ModelAndView mainPage() {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("main");
 		return model;
-
 	}
 	
 	@RequestMapping(value = { "/welcome" }, method = RequestMethod.GET)
-	public ModelAndView welcome() {
+	public ModelAndView welcome1() {
 		ModelAndView model = new ModelAndView();
-		model.setViewName("welcome");
+		model.setViewName("welcomePage");
 		return model;
-
 	}
 
 	@RequestMapping(value = { "/customer" }, method = RequestMethod.GET)
@@ -29,7 +27,6 @@ public class SpringMvcController {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("customer");
 		return model;
-
 	}
 	
 	@RequestMapping(value = { "/help" }, method = RequestMethod.GET)
@@ -37,23 +34,20 @@ public class SpringMvcController {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("help");
 		return model;
-
 	}
 	
 	@RequestMapping(value = { "/checkin" }, method = RequestMethod.GET)
-	public ModelAndView checkinPage() {
+	public ModelAndView checkin() {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("checkin");
 		return model;
-
 	}
 	
 	@RequestMapping(value = { "/checkout" }, method = RequestMethod.GET)
-	public ModelAndView checkoutPage() {
+	public ModelAndView checkout() {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("checkout");
 		return model;
-
 	}
 	
 	@RequestMapping(value = { "/reservation" }, method = RequestMethod.GET)
@@ -61,6 +55,5 @@ public class SpringMvcController {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("reservation");
 		return model;
-
 	}
 }
