@@ -36,8 +36,8 @@ public class Room implements Serializable {
 	private String attribute;
 	
 	@Transient
-	private boolean checked;
-
+	private boolean isChecked;
+	
 	public int getId() {
 		return id;
 	}
@@ -62,14 +62,6 @@ public class Room implements Serializable {
 		this.floor = floor;
 	}
 
-	public boolean isChecked() {
-		return checked;
-	}
-
-	public void setChecked(boolean checked) {
-		this.checked = checked;
-	}
-
 	public int getCapacity() {
 		return capacity;
 	}
@@ -84,6 +76,14 @@ public class Room implements Serializable {
 
 	public void setAttribute(String attribute) {
 		this.attribute = attribute;
+	}
+
+	public boolean isIsChecked() {
+		return isChecked;
+	}
+
+	public void setIsChecked(boolean isChecked) {
+		this.isChecked = isChecked;
 	}
 
 	public static Room create(Session session,int floor,int number,int capacity,String attribute) {

@@ -13,6 +13,7 @@ import com.hotel.app.data.CheckIn;
 import com.hotel.app.data.CheckOut;
 import com.hotel.app.data.Customer;
 import com.hotel.app.data.Employee;
+import com.hotel.app.data.Reservation;
 import com.hotel.app.data.Room;
 import com.hotel.app.data.Stay;
 
@@ -40,6 +41,7 @@ public class HibernateConfig{
                 	configuration.addAnnotatedClass(Employee.class);
                 	configuration.addAnnotatedClass(Room.class);
                 	configuration.addAnnotatedClass(Stay.class);
+                	configuration.addAnnotatedClass(Reservation.class);
                 /**Annotation Classes*/
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();

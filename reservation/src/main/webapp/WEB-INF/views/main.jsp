@@ -2,6 +2,9 @@
 <html data-ng-app="hotel">
 
 <head>
+ <meta name="_csrf" content="${_csrf.token}"/>
+ <!-- default header name is X-CSRF-TOKEN -->
+ <meta name="_csrf_header" content="${_csrf.headerName}"/>
 <script data-require="jquery@*" data-semver="3.2.1"	src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
 <link data-require="bootstrap@*" data-semver="4.1.3" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
 <script data-require="bootstrap@*" data-semver="4.1.3" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>

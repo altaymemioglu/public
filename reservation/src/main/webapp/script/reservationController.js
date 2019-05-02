@@ -13,31 +13,20 @@ angular.module('hotel').controller('reservationCtrl', ['$scope', '$http', functi
 	}
 
 	$scope.fillRoomList();
-	$scope.allItemsSelected = false;
-
-	$scope.selectRoom = function () {
-		for (var i = 0; i < $scope.rooms.length; i++) {
-			if (!$scope.rooms[i].checked) {
-				$scope.allItemsSelected = false;
-				return;
-			}
-		}
-		$scope.allItemsSelected = true;
-	};
-
-	$scope.selectAll = function () {
-
-		for (var i = 0; i < $scope.rooms.length; i++) {
-			$scope.rooms[i].checked = $scope.allItemsSelected;
-		}
-	};
-
+	
 	$scope.reservate = function () {
+		var token = $("meta[name='_csrf']").attr("content");
+	    var header = $("meta[name='_csrf_header']").attr("content");
 		$http({
-			method : 'GET',
-			url : 'http://localhost:8080/reservation/rest/services/reservate'
+			method : 'POST',
+			url : 'http://localhost:8080/reservation/rest/services/reservate',
+			data : $scope.rooms,
+		    headers : {
+		        'Content-Type' : 'application/json',
+		        'X-CSRF-TOKEN' : token
+		    }
 		}).then(function successCallback(response) {
-			$scope.rooms = response.data;
+			
 		});
 	};
 }]);
