@@ -43,7 +43,13 @@
 									<th>{{room.number}}</th>
 									<th>{{room.capacity}}</th>
 									<th>{{room.attribute}}</th>
-									<th>{{room.reserved}}</th>
+									<th>
+									<div data-ng-hide="{{room.reservations.size>0}}" class="ng-hide">
+										<select class="form-control-md">
+										  <option data-ng-repeat="reservation in room.reservations" value="{{reservation.id}}">{{reservation.startDate}} / {{reservation.endDate}}</option>
+										</select>
+									</div>
+									</th>
 								</tr>
 							</tbody>
 						</table>

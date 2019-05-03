@@ -36,8 +36,8 @@ public class Reservation implements Serializable{
 	private Date startDate;
 	
 	@Column(name = "enddate")
-	private Date endDate;
-
+	private Date endDate;	
+	
 	public int getCustomerId() {
 		return customerId;
 	}
@@ -70,7 +70,7 @@ public class Reservation implements Serializable{
 		this.startDate = startDate;
 	}
 
-	public Date getEnddate() {
+	public Date getEndDate() {
 		return endDate;
 	}
 

@@ -23,8 +23,10 @@ public class SpringWebConfig implements WebMvcConfigurer{
         viewResolver.setSuffix(".jsp");
         return viewResolver;
     }
+ 
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
+    
 }

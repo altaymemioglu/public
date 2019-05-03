@@ -1,12 +1,16 @@
 package com.hotel.app.data;
 
 import java.io.Serializable;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -22,6 +26,9 @@ public class Room implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
+	
+	@Transient
+	private boolean isChecked;
 
 	@Column(name = "number")
 	private int number;
@@ -35,8 +42,8 @@ public class Room implements Serializable {
 	@Column(name = "attribute")
 	private String attribute;
 	
-	@Transient
-	private boolean isChecked;
+	@OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL, mappedBy = "roomId", orphanRemoval = true)
+	private Set<Reservation> reservations;
 	
 	public int getId() {
 		return id;
@@ -84,6 +91,14 @@ public class Room implements Serializable {
 
 	public void setIsChecked(boolean isChecked) {
 		this.isChecked = isChecked;
+	}
+
+	public Set<Reservation> getReservations() {
+		return reservations;
+	}
+
+	public void setReservations(Set<Reservation> reservations) {
+		this.reservations = reservations;
 	}
 
 	public static Room create(Session session,int floor,int number,int capacity,String attribute) {
