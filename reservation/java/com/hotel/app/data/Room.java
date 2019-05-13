@@ -14,8 +14,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import org.hibernate.Session;
-
 @Entity
 @Table(name = "room")
 public class Room implements Serializable {
@@ -101,17 +99,12 @@ public class Room implements Serializable {
 		this.reservations = reservations;
 	}
 
-	public static Room create(Session session,int floor,int number,int capacity,String attribute) {
+	public static Room create(int floor,int number,int capacity,String attribute) {
 		Room room = new Room();
 		room.setFloor(floor);
 		room.setNumber(number);
 		room.setCapacity(capacity);
 		room.setAttribute(attribute);
-
-		session.beginTransaction();
-		session.save(room);
-		session.getTransaction().commit();
-		
 		return room;
 	}
 	

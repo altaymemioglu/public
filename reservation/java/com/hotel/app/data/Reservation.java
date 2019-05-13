@@ -10,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.hibernate.Session;
-
 @Entity
 @Table(name = "reservation")
 public class Reservation implements Serializable{
@@ -78,17 +76,12 @@ public class Reservation implements Serializable{
 		this.endDate = endDate;
 	}
 
-	public static Reservation create(Session session,Customer customer, Room room, Date startDate, Date endDate) {
+	public static Reservation create(Customer customer, Room room, Date startDate, Date endDate) {
 		Reservation reservation = new Reservation();
 		reservation.setCustomerId(customer.getId());
 		reservation.setRoomId(room.getId());
 		reservation.setStartDate(startDate);
 		reservation.setEndDate(endDate);
-		
-		session.beginTransaction();
-		session.save(reservation);
-		session.getTransaction().commit();
-		
 		return reservation;
 	}
 	

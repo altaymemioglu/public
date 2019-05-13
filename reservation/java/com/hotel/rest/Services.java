@@ -12,6 +12,7 @@ import javax.ws.rs.core.MediaType;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
 
 import com.hotel.app.Reception;
 import com.hotel.app.data.Customer;
@@ -19,24 +20,25 @@ import com.hotel.app.data.Message;
 import com.hotel.app.data.Room;
 import com.hotel.config.SpringAppConfig;
 
+@Component
 @Path("/services")//localhost:8080/reservation/rest/services
 public class Services {
-	private ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringAppConfig.class);
-
+	private ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringAppConfig.class);
+	
 	@GET
 	@Path("/welcome")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Message getWelcomeMessage() {
-		Reception reception = ctx.getBean(Reception.class);
+		Reception reception = applicationContext.getBean(Reception.class);
 		return reception.getMessage();
 	}
-
+	
 	@GET
 	@Path("/createroom")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Room createRoom(@QueryParam("floor") int floor, @QueryParam("number") int number,
 			@QueryParam("capacity") int capacity, @QueryParam("attribute") String attribute) {
-		Reception reception = ctx.getBean(Reception.class);
+		Reception reception = applicationContext.getBean(Reception.class);
 		Room newRoom = reception.createRoom(floor,number,capacity,attribute);
 		return newRoom;
 	}
@@ -45,7 +47,7 @@ public class Services {
 	@Path("/getallrooms")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Room[] getAllRooms() {
-		Reception reception = ctx.getBean(Reception.class);
+		Reception reception = applicationContext.getBean(Reception.class);
 		return reception.getRoom();
 	}
 	
@@ -53,7 +55,7 @@ public class Services {
 	@Path("/getallcustomers")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Customer[] getAllCustomers() {
-		Reception reception = ctx.getBean(Reception.class);
+		Reception reception = applicationContext.getBean(Reception.class);
 		return reception.getCustomer();
 	}
 	
@@ -62,7 +64,7 @@ public class Services {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Room[] reservate(Room[] rooms) {
-		Reception reception = ctx.getBean(Reception.class);
+		Reception reception = applicationContext.getBean(Reception.class);
 		reception.reservate(rooms, new Customer(),new java.sql.Date(Calendar.getInstance().getTime().getTime()),new java.sql.Date(Calendar.getInstance().getTime().getTime()));
 		return rooms;
 	}
