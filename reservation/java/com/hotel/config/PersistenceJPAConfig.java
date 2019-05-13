@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -20,6 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
+@EnableJpaRepositories(basePackages = "com.hotel.app.data.repository")
 public class PersistenceJPAConfig{
 	
 	@Autowired
@@ -32,10 +34,9 @@ public class PersistenceJPAConfig{
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean entityManager = new LocalContainerEntityManagerFactoryBean();
 		entityManager.setDataSource(this.dataSource);
-		entityManager.setPackagesToScan(new String[] { "com.hotel" }); 
+		entityManager.setPackagesToScan(new String[] { "com.hotel.app.data" }); 
 		entityManager.setJpaVendorAdapter(jpaVendorAdapter());
-		entityManager.setJpaProperties(additionalProperties());
- 
+		entityManager.setJpaProperties(additionalProperties()); 
 		return entityManager;
 	}
    

@@ -2,28 +2,34 @@ package com.hotel.app;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.hotel.app.data.Customer;
 import com.hotel.app.data.Message;
 import com.hotel.app.data.Reservation;
 import com.hotel.app.data.Room;
+import com.hotel.app.data.repository.CustomerRepository;
+import com.hotel.app.data.repository.ReservationRepository;
+import com.hotel.app.data.repository.RoomRepository;
 
 @Component
 @Transactional
 public class Reception {
 	
-	@PersistenceContext
-	private EntityManager entityManager;
+	@Autowired
+    RoomRepository roomRepository;
+	
+	@Autowired
+	CustomerRepository customerRepository;
+	
+	@Autowired
+	ReservationRepository reservationRepository;
 	
 	public Message getMessage() {
 		Message message = new Message();
@@ -33,38 +39,41 @@ public class Reception {
 
 	public Room createRoom(int floor,int number,int capacity,String attribute) {
 		Room newRoom = Room.create(floor, number,capacity,attribute);
-		entityManager.persist(newRoom);
-		return newRoom;
+		return roomRepository.save(newRoom);
 	}
 	
-	public Room[] getRoom(Integer... id){
-	    CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-	    CriteriaQuery<Room> query = builder.createQuery(Room.class);
-	    Root<Room> variableRoot = query.from(Room.class);
-	    query.select(variableRoot);
-	    List<Room> rooms = entityManager.createQuery(query).getResultList();
-	    return rooms.toArray(new Room[rooms.size()]);
+	public Room[] getRoom(Long... id){
+		List<Room> rooms = new ArrayList<Room>();
+		if(id!=null && id.length>0)
+			roomRepository.findAllById(Arrays.asList(id)).forEach(r->rooms.add(r));
+		else
+			roomRepository.findAll().forEach(r->rooms.add(r));
+	    return rooms.toArray(new Room[rooms.size()]);		
 	}
 	
-	public Customer[] getCustomer(Integer... id){
-	    CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-	    CriteriaQuery<Customer> query = builder.createQuery(Customer.class);
-	    Root<Customer> variableRoot = query.from(Customer.class);
-	    query.select(variableRoot);
-	    List<Customer> customers = entityManager.createQuery(query).getResultList();
+	public Customer[] getCustomer(Long... id){
+		List<Customer> customers = new ArrayList<Customer>();
+		if(id!=null && id.length>0)
+			customerRepository.findAllById(Arrays.asList(id)).forEach(c->customers.add(c));
+		else
+			customerRepository.findAll().forEach(c->customers.add(c));
 	    return customers.toArray(new Customer[customers.size()]);
 	}
 
 	public Reservation[] reservate(Room[] rooms,Customer customer,Date start,Date end) {
 		
 		List<Reservation> reservations = new ArrayList<Reservation>();
-		for (Room room : rooms) {
-			if(room.isIsChecked()) {
-				Reservation reservation = Reservation.create(customer,room,start,end);
-				entityManager.persist(reservation);
-				reservations.add(reservation);
-			}
-		}
+		
+		Arrays.asList(rooms)
+			.stream()
+			.filter(r->r.isIsChecked())
+			.forEach(
+					room->{
+							Reservation reservation = Reservation.create(customer,room,start,end);
+							reservations.add(reservationRepository.save(reservation));
+						  }
+					);
+		
 		return reservations.toArray(new Reservation[reservations.size()]);
 	}
 }

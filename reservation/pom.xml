@@ -105,6 +105,25 @@
 			<artifactId>spring-web</artifactId>
 			<version>${org.springframework.version}</version>
 		</dependency>
+		
+		<!-- Spring Data JPA support -->		
+		<dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-jpa</artifactId>
+		    <version>${org.springframework.springdata.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-commons</artifactId>
+		    <version>${org.springframework.springdata.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-commons-core</artifactId>
+		    <version>1.4.1.RELEASE</version>
+		</dependency>
 
 		<!-- Tag libs support for view layer - Spring MVC -->
 		<dependency>
@@ -201,6 +220,7 @@
 		<javac.version>1.8</javac.version>
 		<com.sun.jersey.version>1.8</com.sun.jersey.version>
 		<org.springframework.version>5.0.7.RELEASE</org.springframework.version>
+		<org.springframework.springdata.version>2.1.7.RELEASE</org.springframework.springdata.version>
 		<org.hibernate.version>5.4.2.Final</org.hibernate.version>
 		<org.slf4j.version>1.7.26</org.slf4j.version>
 		<failOnMissingWebXml>false</failOnMissingWebXml>
