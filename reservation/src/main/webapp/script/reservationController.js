@@ -6,7 +6,7 @@ angular.module('hotel').controller('reservationCtrl', ['$scope', '$http', functi
 	$scope.fillRoomList = function () {
 		$http({
 			method : 'GET',
-			url : 'http://localhost:8080/reservation/rest/services/getallrooms'
+			url : 'http://localhost:8080/reservation/rest/services/room/getallrooms'
 		}).then(function successCallback(response) {
 			$scope.rooms = response.data;
 		});
@@ -19,7 +19,7 @@ angular.module('hotel').controller('reservationCtrl', ['$scope', '$http', functi
 	    var header = $("meta[name='_csrf_header']").attr("content");
 		$http({
 			method : 'POST',
-			url : 'http://localhost:8080/reservation/rest/services/reservate',
+			url : 'http://localhost:8080/reservation/rest/services/room/reservate',
 			data : $scope.rooms,
 		    headers : {
 		        'Content-Type' : 'application/json',

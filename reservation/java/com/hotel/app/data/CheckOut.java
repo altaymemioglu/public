@@ -27,14 +27,19 @@ public class CheckOut implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private int id;
+	private long id;
 	
 	@Column(name = "checkinid")
-	private int checkinid;
+	private long checkinid;
 	
 	@Column(name = "employeeid")
-	private int employeeid;
+	private long employeeid;
 	
 	@Column(name = "time")
 	private Date time;
+	
+	@Override
+	public String toString() {
+		return "CheckIn [id=" + id + ", checkinid=" + checkinid + ", employeeid=" + employeeid + ", time=" + time.toString() + "]";
+	}
 }

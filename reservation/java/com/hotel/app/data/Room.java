@@ -51,62 +51,6 @@ public class Room implements Serializable {
 	@OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL, mappedBy = "roomId", orphanRemoval = true)
 	private Set<Reservation> reservations;
 	
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public int getNumber() {
-		return number;
-	}
-
-	public void setNumber(int number) {
-		this.number = number;
-	}
-
-	public int getFloor() {
-		return floor;
-	}
-
-	public void setFloor(int floor) {
-		this.floor = floor;
-	}
-
-	public int getCapacity() {
-		return capacity;
-	}
-
-	public void setCapacity(int capacity) {
-		this.capacity = capacity;
-	}
-
-	public String getAttribute() {
-		return attribute;
-	}
-
-	public void setAttribute(String attribute) {
-		this.attribute = attribute;
-	}
-
-	public boolean isIsChecked() {
-		return isChecked;
-	}
-
-	public void setIsChecked(boolean isChecked) {
-		this.isChecked = isChecked;
-	}
-
-	public Set<Reservation> getReservations() {
-		return reservations;
-	}
-
-	public void setReservations(Set<Reservation> reservations) {
-		this.reservations = reservations;
-	}
-
 	public static Room create(int floor,int number,int capacity,String attribute) {
 		Room room = new Room();
 		room.setFloor(floor);
@@ -119,5 +63,13 @@ public class Room implements Serializable {
 	@Override
 	public String toString() {
 		return "Room [id=" + id + ",floor=" + floor + ", number=" + number + ", capacity=" + capacity + ", attribute=" + attribute + "]";
+	}
+
+	public boolean isIsChecked() {
+		return isChecked;
+	}
+	
+	public void setIsChecked(boolean checked) {
+		this.isChecked = checked;
 	}
 }

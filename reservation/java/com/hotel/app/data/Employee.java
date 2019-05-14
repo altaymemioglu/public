@@ -26,11 +26,16 @@ public class Employee implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private int id;
+	private long id;
 	
 	@Column(name = "name")
 	private String name;
 	
 	@Column(name = "surname")
 	private String surname;
+	
+	@Override
+	public String toString() {
+		return "Room [id=" + id + ",name=" + name + ", surname=" + surname + "]";
+	}
 }
