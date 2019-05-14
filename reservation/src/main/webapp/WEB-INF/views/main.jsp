@@ -18,6 +18,7 @@
 <script src="script/helpController.js"></script>
 <script src="script/reservationController.js"></script>
 <script src="script/welcomeController.js"></script>
+<script src="script/employeeController.js"></script>
 </head>
 <body
 	background="https://www.htihospitality.tech/wp-content/uploads/2017/09/google-hotel-background-landing-page2.png">

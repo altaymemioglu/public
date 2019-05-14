@@ -1,0 +1,8 @@
+To Add a new page (menu)>
+
+1. Create a jsp under src\main\webapp\WEB-INF\views\foo.jsp
+2. Create new pages controller under src\main\webapp\script\fooController.js
+3. Add a new route for foo into module.js
+4. Import fooController.js in main.jsp
+5. Add a menu item in main.jsp
+6. Add a new  MVC path for foo in SpringMVCController.java
