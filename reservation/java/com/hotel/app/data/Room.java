@@ -14,8 +14,16 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.hibernate.envers.Audited;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Audited
 @Entity
 @Table(name = "room")
+@Getter
+@Setter
 public class Room implements Serializable {
 
 	private static final long serialVersionUID = 1L;

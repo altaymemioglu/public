@@ -1,15 +1,12 @@
 package com.hotel.app.data;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Message {
 	private String text;
-
-	public String getText() {
-		return text;
-	}
-
-	public void setText(String text) {
-		this.text = text;
-	}
 	
 	@Override
 	public String toString() {

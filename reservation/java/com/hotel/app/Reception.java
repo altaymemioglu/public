@@ -11,10 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.hotel.app.data.Customer;
+import com.hotel.app.data.Employee;
 import com.hotel.app.data.Message;
 import com.hotel.app.data.Reservation;
 import com.hotel.app.data.Room;
 import com.hotel.app.data.repository.CustomerRepository;
+import com.hotel.app.data.repository.EmployeeRepository;
 import com.hotel.app.data.repository.ReservationRepository;
 import com.hotel.app.data.repository.RoomRepository;
 
@@ -30,6 +32,9 @@ public class Reception {
 	
 	@Autowired
 	ReservationRepository reservationRepository;
+	
+	@Autowired
+	EmployeeRepository employeeRepository;
 	
 	public Message getMessage() {
 		Message message = new Message();
@@ -69,11 +74,15 @@ public class Reception {
 			.filter(r->r.isIsChecked())
 			.forEach(
 					room->{
-							Reservation reservation = Reservation.create(customer,room,start,end);
+							Reservation reservation = Reservation.create(customer, room, start, end);
 							reservations.add(reservationRepository.save(reservation));
 						  }
 					);
 		
 		return reservations.toArray(new Reservation[reservations.size()]);
+	}
+
+	public Employee saveEmployee(Employee employee) {
+		return employeeRepository.save(employee);
 	}
 }

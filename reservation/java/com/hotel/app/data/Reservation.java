@@ -10,13 +10,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.envers.Audited;
+
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Audited
 @Table(name = "reservation")
+@Getter
+@Setter
 public class Reservation implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -34,48 +39,8 @@ public class Reservation implements Serializable{
 	private Date startDate;
 	
 	@Column(name = "enddate")
-	private Date endDate;	
+	private Date endDate;
 	
-	public int getCustomerId() {
-		return customerId;
-	}
-
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
-	}
-
-	public int getRoomId() {
-		return roomId;
-	}
-
-	public void setRoomId(int roomId) {
-		this.roomId = roomId;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public Date getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-
-	public Date getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
-
 	public static Reservation create(Customer customer, Room room, Date startDate, Date endDate) {
 		Reservation reservation = new Reservation();
 		reservation.setCustomerId(customer.getId());

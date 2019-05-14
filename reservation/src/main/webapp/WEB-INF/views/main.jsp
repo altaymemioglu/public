@@ -41,6 +41,7 @@
 							<a class="dropdown-item" href="#!checkout">CheckOut</a>
 							<a class="dropdown-item" href="#!reservation">Reservation</a>
 							<a class="dropdown-item" href="#!customer">Customer</a>
+							<a class="dropdown-item" href="#!employee">Employee</a>
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="#!help">Help</a>
 					</li>

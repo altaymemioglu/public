@@ -10,8 +10,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.hibernate.envers.Audited;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Audited
 @Entity
 @Table(name = "adress")
+@Getter
+@Setter
 public class Adress implements Serializable{
 
 	private static final long serialVersionUID = 1L;

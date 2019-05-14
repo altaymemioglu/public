@@ -14,5 +14,5 @@ public class SpringAppConfig {
 	public Reception reception(){
 		return new Reception();
 	}
-
+	
 }

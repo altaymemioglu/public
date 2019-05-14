@@ -124,6 +124,13 @@
 		    <artifactId>spring-data-commons-core</artifactId>
 		    <version>1.4.1.RELEASE</version>
 		</dependency>
+		
+		<!-- Spring Data JPA Audit support -->		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-aspects</artifactId>
+		    <version>${org.springframework.version}</version>
+		</dependency>
 
 		<!-- Tag libs support for view layer - Spring MVC -->
 		<dependency>
@@ -171,6 +178,20 @@
 		   <artifactId>hibernate-entitymanager</artifactId>
 		   <version>${org.hibernate.version}</version>
 		   <scope>runtime</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-envers</artifactId>
+			<version>${org.hibernate.version}</version>
+		</dependency>
+		
+		<!-- Project Lombok Support -->
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.18.8</version>
+		    <scope>provided</scope>
 		</dependency>
 
 		<!-- PostgreSQL support -->

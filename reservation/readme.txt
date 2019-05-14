@@ -8,7 +8,11 @@ Used:
 	SpringMVC
 	SpringWebSecurity
 	Hibernate
+	Hibernate Envers
 	PostGreSQL
 	AngularJS
 	BootStrap
 	CSS
+	JPA
+	SpringDataJPA
+	Project Lombok

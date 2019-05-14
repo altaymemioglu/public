@@ -56,4 +56,11 @@ public class SpringMvcController {
 		model.setViewName("reservation");
 		return model;
 	}
+	
+	@RequestMapping(value = { "/employee" }, method = RequestMethod.GET)
+	public ModelAndView employee() {
+		ModelAndView model = new ModelAndView();
+		model.setViewName("employee");
+		return model;
+	}
 }

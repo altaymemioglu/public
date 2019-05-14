@@ -30,6 +30,10 @@ app.config(function($routeProvider) {
 		templateUrl : "welcome",
 		controller : "welcomeCtrl"
 	})
+	.when("/employee", {
+		templateUrl : "employee",
+		controller : "employeeCtrl"
+	})
 	.otherwise({
 		redirectTo : "welcome"
 	})

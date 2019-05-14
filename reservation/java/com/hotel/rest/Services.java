@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 
 import com.hotel.app.Reception;
 import com.hotel.app.data.Customer;
+import com.hotel.app.data.Employee;
 import com.hotel.app.data.Message;
 import com.hotel.app.data.Room;
 import com.hotel.config.SpringAppConfig;
@@ -67,5 +68,14 @@ public class Services {
 		Reception reception = applicationContext.getBean(Reception.class);
 		reception.reservate(rooms, new Customer(),new java.sql.Date(Calendar.getInstance().getTime().getTime()),new java.sql.Date(Calendar.getInstance().getTime().getTime()));
 		return rooms;
+	}
+	
+	@POST
+	@Path("/saveemployee")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Employee saveEmployee(Employee employee) {
+		Reception reception = applicationContext.getBean(Reception.class);
+		return reception.saveEmployee(employee);
 	}
 }
