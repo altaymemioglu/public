@@ -60,6 +60,14 @@ public class Services {
 		return reception.getCustomer();
 	}
 	
+	@GET
+	@Path("/getallemployees")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Employee[] getAllEmployees() {
+		Reception reception = applicationContext.getBean(Reception.class);
+		return reception.getEmployee();
+	}
+	
 	@POST
 	@Path("/reservate")
 	@Consumes(MediaType.APPLICATION_JSON)

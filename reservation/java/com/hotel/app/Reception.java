@@ -64,6 +64,15 @@ public class Reception {
 			customerRepository.findAll().forEach(c->customers.add(c));
 	    return customers.toArray(new Customer[customers.size()]);
 	}
+	
+	public Employee[] getEmployee(Long... id){
+		List<Employee> employees = new ArrayList<Employee>();
+		if(id!=null && id.length>0)
+			employeeRepository.findAllById(Arrays.asList(id)).forEach(e->employees.add(e));
+		else
+			employeeRepository.findAll().forEach(e->employees.add(e));
+	    return employees.toArray(new Employee[employees.size()]);
+	}
 
 	public Reservation[] reservate(Room[] rooms,Customer customer,Date start,Date end) {
 		
