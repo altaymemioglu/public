@@ -7,12 +7,15 @@ Used:
 	SpringBeans
 	SpringMVC
 	SpringWebSecurity
+	SpringSecurity over JPA
 	Hibernate
 	Hibernate Envers
 	PostGreSQL
 	AngularJS
 	BootStrap
+	ProjectLombok
 	CSS
 	JPA
 	SpringDataJPA
-	Project Lombok
+	SpringDataRest
+	

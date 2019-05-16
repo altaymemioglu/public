@@ -9,6 +9,7 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.DispatcherServlet;
 
+import com.hotel.config.SpringMvcRestConfig;
 import com.hotel.config.SpringWebConfig;
 import com.sun.jersey.spi.container.servlet.ServletContainer;
 
@@ -17,6 +18,7 @@ public class SpringWebAppInitializer implements WebApplicationInitializer {
 		
 		AnnotationConfigWebApplicationContext webCtx = new AnnotationConfigWebApplicationContext();
 		webCtx.register(SpringWebConfig.class);
+		webCtx.register(SpringMvcRestConfig.class);
 		webCtx.setServletContext(ctx);
 		
 		ServletRegistration.Dynamic springdispatcherServlet = ctx.addServlet("dispatcher", new DispatcherServlet(webCtx));

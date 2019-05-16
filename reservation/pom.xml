@@ -9,7 +9,7 @@
 	<name>reservation Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
-
+	
 		<!-- JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -64,7 +64,7 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-taglibs</artifactId>
-			<version>${org.springframework.version}</version>
+			<version>${org.springframework.security.version}</version>
 		</dependency>
 		
 		<dependency>
@@ -84,13 +84,13 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
-			<version>${org.springframework.version}</version>
+			<version>${org.springframework.security.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
-			<version>${org.springframework.version}</version>
+			<version>${org.springframework.security.version}</version>
 		</dependency>
 
 		<!-- Spring MVC support -->
@@ -124,6 +124,19 @@
 		    <artifactId>spring-data-commons-core</artifactId>
 		    <version>1.4.1.RELEASE</version>
 		</dependency>
+		
+		<!-- Spring Data Rest support -->
+		<dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-rest-core</artifactId>
+		    <version>${org.springframework.springdata.rest.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-rest-webmvc</artifactId>
+		    <version>${org.springframework.springdata.rest.version}</version>
+		</dependency>		
 		
 		<!-- Spring Data JPA Audit support -->		
 		<dependency>
@@ -240,8 +253,10 @@
 	<properties>
 		<javac.version>1.8</javac.version>
 		<com.sun.jersey.version>1.8</com.sun.jersey.version>
-		<org.springframework.version>5.0.7.RELEASE</org.springframework.version>
+		<org.springframework.version>5.1.7.RELEASE</org.springframework.version>
+		<org.springframework.security.version>5.1.5.RELEASE</org.springframework.security.version>		
 		<org.springframework.springdata.version>2.1.7.RELEASE</org.springframework.springdata.version>
+		<org.springframework.springdata.rest.version>3.1.8.RELEASE</org.springframework.springdata.rest.version>
 		<org.hibernate.version>5.4.2.Final</org.hibernate.version>
 		<org.slf4j.version>1.7.26</org.slf4j.version>
 		<failOnMissingWebXml>false</failOnMissingWebXml>
