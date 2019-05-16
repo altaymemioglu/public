@@ -9,10 +9,11 @@ import com.hotel.app.CheckOutBean;
 import com.hotel.app.CustomerBean;
 import com.hotel.app.EmployeeBean;
 import com.hotel.app.RoomBean;
+import com.hotel.app.UserBean;
 import com.hotel.app.WelcomeBean;
 
 @Configuration
-@Import({PersistenceJPAConfig.class})
+@Import({PersistenceJPAConfig.class,SpringSecurityConfig.class})
 public class SpringAppConfig {
 	
 	@Bean 
@@ -45,4 +46,9 @@ public class SpringAppConfig {
 		return new RoomBean();
 	}
 	
+	@Bean 
+	public UserBean userBean(){
+		return new UserBean();
+	}
+
 }
