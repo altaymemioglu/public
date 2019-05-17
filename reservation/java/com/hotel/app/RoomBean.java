@@ -1,16 +1,12 @@
 package com.hotel.app;
 
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.hotel.app.data.Customer;
 import com.hotel.app.data.Reservation;
 import com.hotel.app.data.Room;
 import com.hotel.app.data.repository.ReservationRepository;
@@ -31,20 +27,7 @@ public class RoomBean {
 		return roomRepository.save(newRoom);
 	}
 	
-	public Reservation[] reservate(Room[] rooms,Customer customer,Date start,Date end) {
-		
-		List<Reservation> reservations = new ArrayList<Reservation>();
-		
-		Arrays.asList(rooms)
-			.stream()
-			.filter(r->r.isIsChecked())
-			.forEach(
-					room->{
-							Reservation reservation = Reservation.create(customer, room, start, end);
-							reservations.add(reservationRepository.save(reservation));
-						  }
-					);
-		
-		return reservations.toArray(new Reservation[reservations.size()]);
+	public Reservation reservate(long roomid,long customerid,Date start,Date end) {
+		return reservationRepository.save(Reservation.create(roomid, customerid, start, end));
 	}
 }

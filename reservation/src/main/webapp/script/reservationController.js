@@ -3,6 +3,9 @@
  */
 
 angular.module('hotel').controller('reservationCtrl', ['$scope', '$http', function($scope, $http){
+	 $scope.startdate ='';
+     $scope.enddate ='';
+	
 	$scope.fillRoomList = function () {
 		$http({
 			method : 'GET',
@@ -12,30 +15,25 @@ angular.module('hotel').controller('reservationCtrl', ['$scope', '$http', functi
 		});
 	}
 	
-	$scope.getreservations = function (roomid) {
+	$scope.getreservations = function (room) {
 		$http({
 			method : 'GET',
-			url : 'http://localhost:8080/reservation/rooms/'+roomid+'/reservations'
+			url : 'http://localhost:8080/reservation/rooms/'+room.id+'/reservations'
 		}).then(function successCallback(response) {
+			$scope.selectedRoom = room;
 			$scope.reservations = response.data._embedded.reservations;
 		});
 	}
 
 	$scope.fillRoomList();
 	
-	$scope.reservate = function () {
-		var token = $("meta[name='_csrf']").attr("content");
-	    var header = $("meta[name='_csrf_header']").attr("content");
+	$scope.reservate = function (room) {
 		$http({
-			method : 'POST',
-			url : 'http://localhost:8080/reservation/rest/services/room/reservate',
-			data : $scope.rooms,
-		    headers : {
-		        'Content-Type' : 'application/json',
-		        'X-CSRF-TOKEN' : token
-		    }
+			method : 'GET',
+			url : 'http://localhost:8080/reservation/rest/services/room/reservate?roomid='+room.id
+					+'&customerid=1&startdate='+$scope.startdate+'&enddate='+$scope.enddate
 		}).then(function successCallback(response) {
-			
+			$scope.getreservations();
 		});
 	};
 }]);

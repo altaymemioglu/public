@@ -43,13 +43,12 @@ public class Reservation implements Serializable{
 	@Column(name = "enddate")
 	private Date endDate;
 	
-	public static Reservation create(Customer customer, Room room, Date startDate, Date endDate) {
+	public static Reservation create(long roomid, long customerid, Date startDate, Date endDate) {
 		Reservation reservation = new Reservation();
-		reservation.setCustomerId(customer.getId());
-		reservation.setRoomId(room.getId());
+		reservation.setCustomerId(customerid);
+		reservation.setRoomId(roomid);
 		reservation.setStartDate(startDate);
 		reservation.setEndDate(endDate);
 		return reservation;
 	}
-	
 }

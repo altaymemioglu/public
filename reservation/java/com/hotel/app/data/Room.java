@@ -12,7 +12,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.hibernate.envers.Audited;
@@ -34,9 +33,6 @@ public class Room implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private long id;
-	
-	@Transient
-	private boolean isChecked;
 
 	@Column(name = "number")
 	private int number;
@@ -60,13 +56,5 @@ public class Room implements Serializable {
 		room.setCapacity(capacity);
 		room.setAttribute(attribute);
 		return room;
-	}
-
-	public boolean isIsChecked() {
-		return isChecked;
-	}
-	
-	public void setIsChecked(boolean checked) {
-		this.isChecked = checked;
 	}
 }

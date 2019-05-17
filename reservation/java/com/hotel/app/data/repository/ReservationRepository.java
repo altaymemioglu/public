@@ -7,5 +7,5 @@ import com.hotel.app.data.Reservation;
 
 @RepositoryRestResource
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
-
+	
 }

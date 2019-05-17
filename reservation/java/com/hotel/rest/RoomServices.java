@@ -1,10 +1,11 @@
 package com.hotel.rest;
 
-import java.util.Calendar;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
-import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
@@ -14,7 +15,7 @@ import org.springframework.stereotype.Component;
 
 import com.hotel.app.ApplicationContextReference;
 import com.hotel.app.RoomBean;
-import com.hotel.app.data.Customer;
+import com.hotel.app.data.Reservation;
 import com.hotel.app.data.Room;
 
 @Component
@@ -31,13 +32,14 @@ public class RoomServices {
 		return roomBean.createRoom(floor,number,capacity,attribute);
 	}
 	
-	@POST
+	@GET
 	@Path("/reservate")
-	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Room[] reservate(Room[] rooms) {
-		roomBean.reservate(rooms, new Customer(),new java.sql.Date(Calendar.getInstance().getTime().getTime()),new java.sql.Date(Calendar.getInstance().getTime().getTime()));
-		return rooms;
+	public Reservation reservate(@QueryParam("roomid") int roomid,@QueryParam("customerid") int customerid,
+			@QueryParam("startdate") String startDate,@QueryParam("enddate") String endDate) throws ParseException {
+		DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+		Date start = new java.sql.Date(df.parse(startDate).getTime());
+		Date end = new java.sql.Date(df.parse(endDate).getTime());
+		return roomBean.reservate(roomid,customerid,start,end);
 	}
-	
 }

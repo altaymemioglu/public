@@ -9,6 +9,7 @@
 <link data-require="bootstrap@*" data-semver="4.1.3" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
 <script data-require="bootstrap@*" data-semver="4.1.3" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.css" />
+<link href="style/datepicker3.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 <script src="script/module.js"></script>
@@ -19,6 +20,7 @@
 <script src="script/reservationController.js"></script>
 <script src="script/welcomeController.js"></script>
 <script src="script/employeeController.js"></script>
+<script src="script/bootstrap-datepicker.js"></script>
 </head>
 <body
 	background="https://www.htihospitality.tech/wp-content/uploads/2017/09/google-hotel-background-landing-page2.png">
