@@ -26,13 +26,13 @@ public class Stay implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private int id;
+	private long id;
 	
 	@Column(name = "checkinid")
-	private int checkinid;
+	private long checkinid;
 	
 	@Column(name = "checkoutid")
-	private int checkoutid;
+	private long checkoutid;
 	
 	@Column(name = "payment")
 	private long payment;

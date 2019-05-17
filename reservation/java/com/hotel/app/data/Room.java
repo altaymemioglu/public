@@ -31,7 +31,7 @@ public class Room implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private int id;
+	private long id;
 	
 	@Transient
 	private boolean isChecked;

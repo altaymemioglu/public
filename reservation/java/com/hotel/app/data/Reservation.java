@@ -27,13 +27,13 @@ public class Reservation implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private int id;
+	private long id;
 	
 	@Column(name = "customerid")
-	private int customerId;
+	private long customerId;
 	
 	@Column(name = "roomid")
-	private int roomId;
+	private long roomId;
 	
 	@Column(name = "startdate")
 	private Date startDate;
