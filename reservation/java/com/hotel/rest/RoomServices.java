@@ -31,13 +31,6 @@ public class RoomServices {
 		return roomBean.createRoom(floor,number,capacity,attribute);
 	}
 	
-	@GET
-	@Path("/getallrooms")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Room[] getAllRooms() {		
-		return roomBean.getRoom();
-	}
-	
 	@POST
 	@Path("/reservate")
 	@Consumes(MediaType.APPLICATION_JSON)

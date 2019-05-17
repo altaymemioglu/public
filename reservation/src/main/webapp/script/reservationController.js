@@ -6,9 +6,18 @@ angular.module('hotel').controller('reservationCtrl', ['$scope', '$http', functi
 	$scope.fillRoomList = function () {
 		$http({
 			method : 'GET',
-			url : 'http://localhost:8080/reservation/rest/services/room/getallrooms'
+			url : 'http://localhost:8080/reservation/rooms'
 		}).then(function successCallback(response) {
-			$scope.rooms = response.data;
+			$scope.rooms = response.data._embedded.rooms;
+		});
+	}
+	
+	$scope.getreservations = function (roomid) {
+		$http({
+			method : 'GET',
+			url : 'http://localhost:8080/reservation/rooms/'+roomid+'/reservations'
+		}).then(function successCallback(response) {
+			$scope.reservations = response.data._embedded.reservations;
 		});
 	}
 

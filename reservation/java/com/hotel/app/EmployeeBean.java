@@ -1,8 +1,7 @@
 package com.hotel.app;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
@@ -27,15 +26,6 @@ public class EmployeeBean {
 	@Autowired
 	CheckOutBean checkOutBean;
 
-	public Employee[] getEmployee(Long... id){
-		List<Employee> employees = new ArrayList<Employee>();
-		if(id!=null && id.length>0)
-			employeeRepository.findAllById(Arrays.asList(id)).forEach(e->employees.add(e));
-		else
-			employeeRepository.findAll().forEach(e->employees.add(e));
-	    return employees.toArray(new Employee[employees.size()]);
-	}
-	
 	public Employee saveEmployee(Employee employee) {
 		return employeeRepository.save(employee);
 	}
@@ -45,19 +35,23 @@ public class EmployeeBean {
 		return employee;
 	}
 
-	public Activity getEmployeeActivity(Employee employee) {
+	public Activity getEmployeeActivity(long employeeId) {
 		Activity activity = new Activity();
+		
+		Optional<Employee> employee = employeeRepository.findById(employeeId);
 		 
-		activity.setCheckIns(
-				Arrays 
-		        .stream(checkInBean.getCheckIn(employee)) 
-		        .collect(Collectors.toSet())
-				);
-		activity.setCheckOuts(
-				Arrays 
-		        .stream(checkOutBean.getCheckOut(employee)) 
-		        .collect(Collectors.toSet())
-				);
+		if(employee.isPresent()) {
+			activity.setCheckIns(
+					Arrays 
+			        .stream(checkInBean.getCheckIn(employee.get())) 
+			        .collect(Collectors.toSet())
+					);
+			activity.setCheckOuts(
+					Arrays 
+			        .stream(checkOutBean.getCheckOut(employee.get())) 
+			        .collect(Collectors.toSet())
+					);
+		}
 				
 		return activity;
 	}

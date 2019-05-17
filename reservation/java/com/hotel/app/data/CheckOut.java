@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.hibernate.envers.Audited;
 
 import lombok.Getter;
@@ -20,6 +21,7 @@ import lombok.Setter;
 @Table(name = "checkout")
 @Getter
 @Setter
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CheckOut implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -37,9 +39,5 @@ public class CheckOut implements Serializable{
 	
 	@Column(name = "time")
 	private Date time;
-	
-	@Override
-	public String toString() {
-		return "CheckIn [id=" + id + ", checkinid=" + checkinid + ", employeeid=" + employeeid + ", time=" + time.toString() + "]";
-	}
+
 }

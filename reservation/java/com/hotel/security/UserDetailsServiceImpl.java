@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.hotel.app.data.Role;
 import com.hotel.app.data.User;
+
 import com.hotel.app.data.repository.UserRepository;
 
 @Service

@@ -6,9 +6,9 @@ angular.module('hotel').controller('employeeCtrl', ['$scope', '$http', function(
 	$scope.fillEmployeeList = function () {
 		$http({
 			method : 'GET',
-			url : 'http://localhost:8080/reservation/rest/services/employee/getallemployees'
+			url : 'http://localhost:8080/reservation/employees'
 		}).then(function successCallback(response) {
-			$scope.employees = response.data;
+			$scope.employees = response.data._embedded.employees;
 		});
 	}
 

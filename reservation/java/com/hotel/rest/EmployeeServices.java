@@ -22,18 +22,11 @@ public class EmployeeServices {
 	EmployeeBean employeeBean = ApplicationContextReference.context.getBean(EmployeeBean.class);
 	
 	@GET
-	@Path("/getallemployees")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Employee[] getAllEmployees() {
-		return employeeBean.getEmployee();
-	}
-	
-	@GET
 	@Path("/getemployeeactivities")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Activity getEmployeeActivities(@QueryParam("employeeid") long employeeid) {
-		return employeeBean.getEmployeeActivity(employeeBean.getEmployee(employeeid)[0]);
+		return employeeBean.getEmployeeActivity(employeeid);
 	}
 	
 	@POST

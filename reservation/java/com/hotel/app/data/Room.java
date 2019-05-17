@@ -14,6 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.hibernate.envers.Audited;
 
 import lombok.Getter;
@@ -24,6 +25,7 @@ import lombok.Setter;
 @Table(name = "room")
 @Getter
 @Setter
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Room implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -58,11 +60,6 @@ public class Room implements Serializable {
 		room.setCapacity(capacity);
 		room.setAttribute(attribute);
 		return room;
-	}
-	
-	@Override
-	public String toString() {
-		return "Room [id=" + id + ",floor=" + floor + ", number=" + number + ", capacity=" + capacity + ", attribute=" + attribute + "]";
 	}
 
 	public boolean isIsChecked() {

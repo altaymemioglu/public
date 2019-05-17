@@ -1,7 +1,6 @@
 package com.hotel.app;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -19,15 +18,6 @@ public class CheckOutBean {
 	
 	@Autowired
 	CheckOutRepository checkOutRepository;
-	
-	public CheckOut[] getCheckOut(Long... id){
-		List<CheckOut> checkOuts = new ArrayList<CheckOut>();
-		if(id!=null && id.length>0)
-			checkOutRepository.findAllById(Arrays.asList(id)).forEach(ch->checkOuts.add(ch));
-		else
-			checkOutRepository.findAll().forEach(ch->checkOuts.add(ch));
-	    return checkOuts.toArray(new CheckOut[checkOuts.size()]);		
-	}
 	
 	public CheckOut[] getCheckOut(Employee employee){
 		List<CheckOut> checkOuts = new ArrayList<CheckOut>();

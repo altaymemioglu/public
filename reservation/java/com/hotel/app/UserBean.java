@@ -9,8 +9,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.hotel.app.data.User;
-import com.hotel.app.data.repository.RoleRepository;
 import com.hotel.app.data.repository.UserRepository;
+import com.hotel.app.data.repository.RoleRepository;
 
 @Component
 @Transactional

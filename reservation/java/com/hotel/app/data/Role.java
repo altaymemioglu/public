@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +18,7 @@ import lombok.Setter;
 @Table(name = "role")
 @Getter
 @Setter
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

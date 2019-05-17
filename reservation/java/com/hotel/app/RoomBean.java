@@ -31,15 +31,6 @@ public class RoomBean {
 		return roomRepository.save(newRoom);
 	}
 	
-	public Room[] getRoom(Long... id){
-		List<Room> rooms = new ArrayList<Room>();
-		if(id!=null && id.length>0)
-			roomRepository.findAllById(Arrays.asList(id)).forEach(r->rooms.add(r));
-		else
-			roomRepository.findAll().forEach(r->rooms.add(r));
-	    return rooms.toArray(new Room[rooms.size()]);		
-	}
-	
 	public Reservation[] reservate(Room[] rooms,Customer customer,Date start,Date end) {
 		
 		List<Reservation> reservations = new ArrayList<Reservation>();
