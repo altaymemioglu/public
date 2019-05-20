@@ -18,4 +18,4 @@ Used:
 	JPA
 	SpringDataJPA
 	SpringDataRest
-	
+	Spring MultiLanguage

@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Import;
 
 import com.hotel.app.CheckInBean;
 import com.hotel.app.CheckOutBean;
+import com.hotel.app.CountryBean;
 import com.hotel.app.CustomerBean;
 import com.hotel.app.EmployeeBean;
 import com.hotel.app.RoomBean;
@@ -13,7 +14,7 @@ import com.hotel.app.UserBean;
 import com.hotel.app.WelcomeBean;
 
 @Configuration
-@Import({PersistenceJPAConfig.class,SpringSecurityConfig.class})
+@Import({PersistenceJPAConfig.class,SpringSecurityConfig.class,SpringMongoConfig.class})
 public class SpringAppConfig {
 	
 	@Bean 
@@ -49,6 +50,11 @@ public class SpringAppConfig {
 	@Bean 
 	public UserBean userBean(){
 		return new UserBean();
+	}
+	
+	@Bean 
+	public CountryBean countryBean(){
+		return new CountryBean();
 	}
 
 }

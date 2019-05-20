@@ -1,0 +1,9 @@
+1. Download MongoDB from https://www.mongodb.com/dr/fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.9.zip/download
+2. Open Zip File
+3. Create c:\data\db\
+4. Run mongod from unzipped directory (server)
+5. Run mongo from unzipped directory (client)
+6. In mongo type > use hotel (this initializes hotel db in MongoDB)
+7. In mongo type > db.countries.insertOne({name:"xyz",...}) (To Create the collection)
+8. In mongo type > db.countries.find() (For:select * from countries)
+9. In mongo type > db.countries.find(name:"xyz") (For:select * from countries where name = "xyz")
