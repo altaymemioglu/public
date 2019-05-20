@@ -1,7 +1,11 @@
 <!DOCTYPE html>
+<%@page pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html data-ng-app="hotel">
 
-<head>
+<head >
+ <meta charset="utf-8"/> 
  <meta name="_csrf" content="${_csrf.token}"/>
  <!-- default header name is X-CSRF-TOKEN -->
  <meta name="_csrf_header" content="${_csrf.headerName}"/>
@@ -22,8 +26,7 @@
 <script src="script/employeeController.js"></script>
 <script src="script/bootstrap-datepicker.js"></script>
 </head>
-<body
-	background="https://www.htihospitality.tech/wp-content/uploads/2017/09/google-hotel-background-landing-page2.png">
+<body style="background:url(style/beach2.jpg);background-size:cover">
 	<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
 		<div class="container">
 			<a href="#!welcome" class="navbar-brand">Paradise Hotel</a>
@@ -38,18 +41,31 @@
 						class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
 						id="themes">Menu <span class="caret"></span></a>
 						<div class="dropdown-menu" aria-labelledby="themes">
-							<a class="dropdown-item" href="#!welcome">Default</a>
+							<a class="dropdown-item" href="#!welcome">
+								<spring:message code="main.menu.default"/>
+							</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#!checkin">CheckIn</a>
-							<a class="dropdown-item" href="#!checkout">CheckOut</a>
-							<a class="dropdown-item" href="#!reservation">Reservation</a>
-							<a class="dropdown-item" href="#!customer">Customer</a>
-							<a class="dropdown-item" href="#!employee">Employee</a>
+							<a class="dropdown-item" href="#!checkin">
+								<spring:message code="main.menu.checkIn"/>
+							</a>
+							<a class="dropdown-item" href="#!checkout">
+								<spring:message code="main.menu.checkOut"/>
+							</a>
+							<a class="dropdown-item" href="#!reservation">
+								<spring:message code="main.menu.reservation"/>
+							</a>
+							<a class="dropdown-item" href="#!customer">
+								<spring:message code="main.menu.customer"/>
+							</a>
+							<a class="dropdown-item" href="#!employee">
+								<spring:message code="main.menu.employee"/>
+							</a>
 						</div></li>
-					<li class="nav-item"><a class="nav-link" href="#!help">Help</a>
+					<li class="nav-item"><a class="nav-link" href="#!help">
+						<spring:message code="main.menu.help"/>
+					</a>
 					</li>
 				</ul>
-
 				<ul class="nav navbar-nav ml-auto">
 					<li class="nav-item">
 						<form id="logoutform" action="/reservation/logout" method="post">
@@ -61,11 +77,10 @@
 						</form>
 					</li>
 				</ul>
-				
+				<a href="main?locale=en">English </a> | <a href="main?locale=tr">Türkçe </a>
 			</div>
 		</div>
 	</div>
-
 	<div class="bs-docs-section clearfix">
 		<div class="row">
 			<div class="col-sm-6">
