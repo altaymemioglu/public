@@ -242,10 +242,37 @@
 		</dependency>
 
 		<!-- SLF4J support -->
+		<!--
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-simple</artifactId>
 			<version>${org.slf4j.version}</version>
+		</dependency>
+		-->
+		
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>${org.slf4j.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-log4j12</artifactId>
+		    <version>${org.slf4j.version}</version>
+		    <scope>test</scope>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-slf4j-impl</artifactId>
+		    <version>${org.slf4j.impl.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>${log4j.version}</version>
 		</dependency>
 
 		<!-- AngularJS support -->
@@ -274,6 +301,8 @@
 		<org.hibernate.version>5.4.2.Final</org.hibernate.version>
 		<mongo.java.driver.version>3.10.2</mongo.java.driver.version>
 		<org.slf4j.version>1.7.26</org.slf4j.version>
+		<org.slf4j.impl.version>2.11.2</org.slf4j.impl.version>
+		<log4j.version>1.2.17</log4j.version>
 		<failOnMissingWebXml>false</failOnMissingWebXml>
 		<jstl.version>1.2</jstl.version>
 	</properties>

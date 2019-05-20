@@ -19,3 +19,5 @@ Used:
 	SpringDataJPA
 	SpringDataRest
 	Spring MultiLanguage
+	SpringData MongoDB
+	slf4J Over log4J

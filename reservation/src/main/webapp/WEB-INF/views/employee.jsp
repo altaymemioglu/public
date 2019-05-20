@@ -29,7 +29,9 @@
 						<label for="surname"><spring:message code="employee.centerpane.label2"/>:</label>
 						<input name="surname" class="form-control input-sm" data-ng-model="employee.surname"/>
 						<p/>
-						<button class="btn btn-sm btn-block btn-primary" data-ng-click="save()">Save</button>
+						<button class="btn btn-sm btn-block btn-primary" data-ng-click="save()">
+							<spring:message code="employee.centerpane.savebutton"/>
+						</button>
 						<p/>
 						<table class="table table-striped table-hover" id="employeeTable">
 							<thead class="thead-dark">
