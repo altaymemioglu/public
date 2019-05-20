@@ -26,10 +26,10 @@
 <script src="script/employeeController.js"></script>
 <script src="script/bootstrap-datepicker.js"></script>
 </head>
-<body style="background:url(style/beach2.jpg);background-size:cover">
+<body style="background:url(style/background.jpg);background-size:cover">
 	<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
 		<div class="container">
-			<a href="#!welcome" class="navbar-brand">Paradise Hotel</a>
+			<a href="#!welcome" class="navbar-brand"><spring:message code="main.menu.hotelname"/></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarResponsive" aria-controls="navbarResponsive"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@
 				<ul class="navbar-nav">
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
-						id="themes">Menu <span class="caret"></span></a>
+						id="themes"><spring:message code="main.menu.menu"/> <span class="caret"></span></a>
 						<div class="dropdown-menu" aria-labelledby="themes">
 							<a class="dropdown-item" href="#!welcome">
 								<spring:message code="main.menu.default"/>
@@ -72,12 +72,12 @@
 							<input type="hidden" name="${_csrf.parameterName}"
 								value="${_csrf.token}" /> <a class="nav-link"
 								href="javascript:{}"
-								onclick="document.getElementById('logoutform').submit(); return false;">Log
-								Out</a>
+								onclick="document.getElementById('logoutform').submit(); return false;">
+								<spring:message code="main.menu.logout"/> </a>
 						</form>
 					</li>
 				</ul>
-				<a href="main?locale=en">English </a> | <a href="main?locale=tr">Türkçe </a>
+				<a href="main?locale=en">English </a> | <a href="main?locale=tr"> Türkçe </a>
 			</div>
 		</div>
 	</div>

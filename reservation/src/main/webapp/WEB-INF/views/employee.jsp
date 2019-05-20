@@ -1,3 +1,6 @@
+<%@page pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <p />
 .
 <p />
@@ -11,19 +14,19 @@
 		<div class="row justify-content-center features">
 			<div class="col-sm-6 col-md-5 col-lg-4 item">
 				<div class="box">
-					<h3 class="name">Employee Operations</h3>
-					<p class="description">Wellcome!</p>
-					<p>You can refer to this page for managing employee records! Create and update the details of the employee from here!</p>
+					<h3 class="name"><spring:message code="employee.leftpane.header1"/></h3>
+					<p class="description"><spring:message code="employee.leftpane.header2"/></p>
+					<p><spring:message code="employee.leftpane.content1"/></p>
 
 				</div>
 			</div>
 			<div class="col-sm-6 col-md-5 col-lg-4 item">
 				<div class="box">
 					<div>
-						<label for="name">Name:</label> 
+						<label for="name"><spring:message code="employee.centerpane.label1"/>:</label> 
 						<input name="name" class="form-control input-sm" data-ng-model="employee.name"/>
 						<p/>
-						<label for="surname">Surname:</label>
+						<label for="surname"><spring:message code="employee.centerpane.label2"/>:</label>
 						<input name="surname" class="form-control input-sm" data-ng-model="employee.surname"/>
 						<p/>
 						<button class="btn btn-sm btn-block btn-primary" data-ng-click="save()">Save</button>
@@ -32,8 +35,8 @@
 							<thead class="thead-dark">
 								<tr>
 									<th style="display: none;">id</th>
-									<th>Name</th>
-									<th>Surname</th>
+									<th><spring:message code="employee.centerpane.employees.header1"/></th>
+									<th><spring:message code="employee.centerpane.employees.header2"/></th>
 									<th></th>
 									<th></th>
 								</tr>
@@ -46,12 +49,12 @@
 									<th>
 										<button type="button" class="btn btn-sm btn-block btn-primary" 
 												data-toggle="modal" data-target="#exampleModal" data-ng-click="activities(emp)">
-  											Details
+  											<spring:message code="employee.centerpane.employees.detailsbutton"/>
 										</button>
 									</th>
 									<th>
 										<button class="btn btn-sm btn-block btn-secondary" data-ng-click="remove(emp)">
-											Remove
+											<spring:message code="employee.centerpane.employees.removebutton"/>
 										</button>
 									</th>
 								</tr>
@@ -68,7 +71,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Employee's Recent Activities</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><spring:message code="employee.modal1.header"/></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -78,9 +81,9 @@
 							<thead class="thead-dark">
 								<tr>
 									<th style="display: none;">id</th>
-									<th>Room Id</th>
-									<th>Customer Id</th>
-									<th>Time</th>
+									<th><spring:message code="employee.modal1.checkins.header1"/></th>
+									<th><spring:message code="employee.modal1.checkins.header2"/></th>
+									<th><spring:message code="employee.modal1.checkins.header3"/></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -94,7 +97,7 @@
 						</table>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><spring:message code="employee.modal1.closebutton"/></button>
       </div>
     </div>
   </div>
