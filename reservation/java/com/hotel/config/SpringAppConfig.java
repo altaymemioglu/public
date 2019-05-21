@@ -14,7 +14,7 @@ import com.hotel.app.UserBean;
 import com.hotel.app.WelcomeBean;
 
 @Configuration
-@Import({PersistenceJPAConfig.class,SpringSecurityConfig.class,SpringMongoConfig.class})
+@Import({PersistenceJPAConfig.class,SpringSecurityConfig.class,SpringMongoConfig.class,SpringCacheConfig.class})
 public class SpringAppConfig {
 	
 	@Bean 
