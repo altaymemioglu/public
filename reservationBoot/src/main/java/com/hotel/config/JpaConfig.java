@@ -24,7 +24,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "com.hotel.app.data.repository")
 @EnableJpaAuditing
-public class PersistenceJPAConfig{
+public class JpaConfig{
 	
 	@Autowired
 	private DataSource dataSource;

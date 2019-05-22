@@ -6,16 +6,17 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import com.hotel.config.PersistenceJPAConfig;
+import com.hotel.config.JpaConfig;
+import com.hotel.config.SecurityConfig;
 
 @SpringBootApplication
 @EnableWebMvc
 @ComponentScan(basePackages = "com.hotel")
-@Import({PersistenceJPAConfig.class})
-public class SystemApplication {
+@Import({JpaConfig.class,SecurityConfig.class})
+public class HotelApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SystemApplication.class, args);
+		SpringApplication.run(HotelApplication.class, args);
 	}
 
 }
