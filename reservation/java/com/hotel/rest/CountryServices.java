@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 import com.hotel.app.ApplicationContextReference;
 import com.hotel.app.CountryBean;
-import com.hotel.app.data.Country;
+import com.hotel.data.Country;
 
 @Component
 @Path("/services/country")//localhost:8080/reservation/rest/services/country

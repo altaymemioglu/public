@@ -12,10 +12,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.hotel.app.data.Role;
-import com.hotel.app.data.User;
-
-import com.hotel.app.data.repository.UserRepository;
+import com.hotel.data.Role;
+import com.hotel.data.User;
+import com.hotel.repository.UserRepository;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService{

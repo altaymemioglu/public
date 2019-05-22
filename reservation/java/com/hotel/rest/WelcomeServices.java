@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import com.hotel.app.ApplicationContextReference;
 import com.hotel.app.WelcomeBean;
-import com.hotel.app.data.Message;
+import com.hotel.data.Message;
 
 @Component
 @Path("/services/welcome")//localhost:8080/reservation/rest/services/welcome

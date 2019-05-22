@@ -2,7 +2,7 @@ package com.hotel.app;
 
 import org.springframework.stereotype.Component;
 
-import com.hotel.app.data.Message;
+import com.hotel.data.Message;
 
 @Component
 public class WelcomeBean {

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 import com.hotel.app.ApplicationContextReference;
 import com.hotel.app.CustomerBean;
-import com.hotel.app.data.Customer;
+import com.hotel.data.Customer;
 
 @Component
 @Path("/services/customer")//localhost:8080/reservation/rest/services/customer

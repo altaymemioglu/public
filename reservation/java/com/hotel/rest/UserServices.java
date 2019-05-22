@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 import com.hotel.app.ApplicationContextReference;
 import com.hotel.app.UserBean;
-import com.hotel.app.data.User;
+import com.hotel.data.User;
 
 @Component
 @Path("/services/user")//localhost:8080/reservation/rest/services/user

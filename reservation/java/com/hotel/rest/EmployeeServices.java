@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 
 import com.hotel.app.ApplicationContextReference;
 import com.hotel.app.EmployeeBean;
-import com.hotel.app.data.Activity;
-import com.hotel.app.data.Employee;
+import com.hotel.data.Activity;
+import com.hotel.data.Employee;
 
 @Component
 @Path("/services/employee")//localhost:8080/reservation/rest/services/employee
