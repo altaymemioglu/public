@@ -8,9 +8,9 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.hotel.app.data.CheckIn;
-import com.hotel.app.data.Employee;
-import com.hotel.app.data.repository.CheckInRepository;
+import com.hotel.data.CheckIn;
+import com.hotel.data.Employee;
+import com.hotel.repository.CheckInRepository;
 
 @Component
 @Transactional

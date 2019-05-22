@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hotel.app.UserBean;
-import com.hotel.app.data.User;
+import com.hotel.data.User;
 
 @RestController
 public class UserServices {

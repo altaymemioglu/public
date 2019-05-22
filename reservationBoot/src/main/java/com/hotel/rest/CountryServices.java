@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hotel.app.CountryBean;
-import com.hotel.app.data.Country;
+import com.hotel.data.Country;
 
 @RestController
 public class CountryServices {

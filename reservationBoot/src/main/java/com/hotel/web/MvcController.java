@@ -1,4 +1,4 @@
-package com.hotel.config.web;
+package com.hotel.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

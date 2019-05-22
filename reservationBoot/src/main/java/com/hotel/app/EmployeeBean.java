@@ -9,9 +9,9 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.hotel.app.data.Activity;
-import com.hotel.app.data.Employee;
-import com.hotel.app.data.repository.EmployeeRepository;
+import com.hotel.data.Activity;
+import com.hotel.data.Employee;
+import com.hotel.repository.EmployeeRepository;
 
 @Component
 @Transactional

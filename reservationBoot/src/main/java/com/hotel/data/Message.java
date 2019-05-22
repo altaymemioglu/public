@@ -1,4 +1,4 @@
-package com.hotel.app.data;
+package com.hotel.data;
 
 import lombok.Getter;
 import lombok.Setter;

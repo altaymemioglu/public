@@ -5,8 +5,8 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.hotel.app.data.Customer;
-import com.hotel.app.data.repository.CustomerRepository;
+import com.hotel.data.Customer;
+import com.hotel.repository.CustomerRepository;
 
 @Component
 @Transactional

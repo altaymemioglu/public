@@ -1,4 +1,4 @@
-package com.hotel.app.data;
+package com.hotel.data;
 
 import java.io.Serializable;
 
@@ -8,36 +8,26 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "adress")
+@Table(name = "employee")
 @Getter
 @Setter
-public class Adress implements Serializable{
-
+public class Employee implements Serializable{
+	
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private long id;
-
-	@Column(name = "street")
-	private String street;
-
-	@Column(name = "number")
-	private int number;
 	
-	@Column(name = "city")
-	private String city;
+	@Column(name = "name")
+	private String name;
 	
-	@Column(name = "country")
-	private String country;
-	
-	@Transient
-	private boolean checked;
+	@Column(name = "surname")
+	private String surname;
 }

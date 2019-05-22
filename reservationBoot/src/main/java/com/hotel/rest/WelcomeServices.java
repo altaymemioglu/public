@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hotel.app.WelcomeBean;
-import com.hotel.app.data.Message;
+import com.hotel.data.Message;
 
 @RestController
 public class WelcomeServices {

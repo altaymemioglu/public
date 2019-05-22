@@ -1,6 +1,7 @@
-package com.hotel.app.data;
+package com.hotel.data;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,10 +14,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "customer")
+@Table(name = "checkout")
 @Getter
 @Setter
-public class Customer implements Serializable{
+public class CheckOut implements Serializable{
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -24,16 +26,13 @@ public class Customer implements Serializable{
 	@Column(name = "id")
 	private long id;
 	
-	@Column(name = "name")
-	private String name;
+	@Column(name = "checkinid")
+	private long checkinid;
 	
-	@Column(name = "surname")
-	private String surname;
+	@Column(name = "employeeid")
+	private long employeeid;
 	
-	@Column(name = "phone")
-	private String phone;
-	
-	@Column(name = "addressid")
-	private int addressid;
-	
+	@Column(name = "time")
+	private Date time;
+
 }

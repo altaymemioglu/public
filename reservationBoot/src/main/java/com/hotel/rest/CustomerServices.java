@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hotel.app.CustomerBean;
-import com.hotel.app.data.Customer;
+import com.hotel.data.Customer;
 
 @RestController
 public class CustomerServices {

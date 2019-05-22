@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hotel.app.RoomBean;
-import com.hotel.app.data.Reservation;
-import com.hotel.app.data.Room;
+import com.hotel.data.Reservation;
+import com.hotel.data.Room;
 
 @RestController
 public class RoomServices {

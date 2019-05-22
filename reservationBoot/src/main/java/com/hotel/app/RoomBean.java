@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Component;
 
-import com.hotel.app.data.Reservation;
-import com.hotel.app.data.Room;
-import com.hotel.app.data.repository.ReservationRepository;
-import com.hotel.app.data.repository.RoomRepository;
+import com.hotel.data.Reservation;
+import com.hotel.data.Room;
+import com.hotel.repository.ReservationRepository;
+import com.hotel.repository.RoomRepository;
 
 @Component
 @Transactional

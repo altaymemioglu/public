@@ -12,18 +12,18 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguratio
 import org.springframework.http.MediaType;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 
-import com.hotel.app.data.Activity;
-import com.hotel.app.data.Adress;
-import com.hotel.app.data.CheckIn;
-import com.hotel.app.data.CheckOut;
-import com.hotel.app.data.Customer;
-import com.hotel.app.data.Employee;
-import com.hotel.app.data.Message;
-import com.hotel.app.data.Reservation;
-import com.hotel.app.data.Role;
-import com.hotel.app.data.Room;
-import com.hotel.app.data.Stay;
-import com.hotel.app.data.User;
+import com.hotel.data.Activity;
+import com.hotel.data.Adress;
+import com.hotel.data.CheckIn;
+import com.hotel.data.CheckOut;
+import com.hotel.data.Customer;
+import com.hotel.data.Employee;
+import com.hotel.data.Message;
+import com.hotel.data.Reservation;
+import com.hotel.data.Role;
+import com.hotel.data.Room;
+import com.hotel.data.Stay;
+import com.hotel.data.User;
 
 @Configuration
 public class MvcRestConfig extends RepositoryRestMvcConfiguration {

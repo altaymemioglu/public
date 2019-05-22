@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hotel.app.EmployeeBean;
-import com.hotel.app.data.Activity;
-import com.hotel.app.data.Employee;
+import com.hotel.data.Activity;
+import com.hotel.data.Employee;
 
 @RestController
 public class EmployeeServices {

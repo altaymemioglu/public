@@ -1,11 +1,11 @@
-package com.hotel.app.data.repository;
+package com.hotel.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-import com.hotel.app.data.Reservation;
+import com.hotel.data.Customer;
 
 @RepositoryRestResource
-public interface ReservationRepository extends JpaRepository<Reservation, Long> {
-	
+public interface CustomerRepository extends JpaRepository<Customer, Long> {
+
 }
