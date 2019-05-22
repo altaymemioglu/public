@@ -9,7 +9,7 @@ angular.module('hotel').controller('reservationCtrl', ['$scope', '$http', functi
 	$scope.fillRoomList = function () {
 		$http({
 			method : 'GET',
-			url : 'http://localhost:8080/reservationBoot/rooms'
+			url : 'http://localhost:8080/reservationboot/rooms'
 		}).then(function successCallback(response) {
 			$scope.rooms = response.data._embedded.rooms;
 		});
@@ -18,7 +18,7 @@ angular.module('hotel').controller('reservationCtrl', ['$scope', '$http', functi
 	$scope.getreservations = function (room) {
 		$http({
 			method : 'GET',
-			url : 'http://localhost:8080/reservationBoot/rooms/'+room.id+'/reservations'
+			url : 'http://localhost:8080/reservationboot/rooms/'+room.id+'/reservations'
 		}).then(function successCallback(response) {
 			$scope.selectedRoom = room;
 			$scope.reservations = response.data._embedded.reservations;
@@ -30,7 +30,7 @@ angular.module('hotel').controller('reservationCtrl', ['$scope', '$http', functi
 	$scope.reservate = function (room) {
 		$http({
 			method : 'GET',
-			url : 'http://localhost:8080/reservationBoot/services/room/reservate?roomid='+room.id
+			url : 'http://localhost:8080/reservationboot/services/room/reservate?roomid='+room.id
 					+'&customerid=1&startdate='+$scope.startdate+'&enddate='+$scope.enddate
 		}).then(function successCallback(response) {
 			$scope.getreservations();

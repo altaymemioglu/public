@@ -6,7 +6,7 @@ angular.module('hotel').controller('employeeCtrl', ['$scope', '$http', function(
 	$scope.fillEmployeeList = function () {
 		$http({
 			method : 'GET',
-			url : 'http://localhost:8080/reservationBoot/employees'
+			url : 'http://localhost:8080/reservationboot/employees'
 		}).then(function successCallback(response) {
 			$scope.employees = response.data._embedded.employees;
 		});
@@ -19,7 +19,7 @@ angular.module('hotel').controller('employeeCtrl', ['$scope', '$http', function(
 	    var header = $("meta[name='_csrf_header']").attr("content");
 		$http({
 			method : 'POST',
-			url : 'http://localhost:8080/reservationBoot/services/employee/save',
+			url : 'http://localhost:8080/reservationboot/services/employee/save',
 			data : $scope.employee,
 		    headers : {
 		        'Content-Type' : 'application/json',
@@ -36,7 +36,7 @@ angular.module('hotel').controller('employeeCtrl', ['$scope', '$http', function(
 	    var header = $("meta[name='_csrf_header']").attr("content");
 		$http({
 			method : 'POST',
-			url : 'http://localhost:8080/reservationBoot/services/employee/remove',
+			url : 'http://localhost:8080/reservationboot/services/employee/remove',
 			data : emp,
 		    headers : {
 		        'Content-Type' : 'application/json',
@@ -51,7 +51,7 @@ angular.module('hotel').controller('employeeCtrl', ['$scope', '$http', function(
 	$scope.activities = function (emp) {
 		$http({
 			method : 'GET',
-			url : 'http://localhost:8080/reservationBoot/services/employee/activities?employeeid='+emp.id
+			url : 'http://localhost:8080/reservationboot/services/employee/activities?employeeid='+emp.id
 		}).then(function successCallback(response) {
 			$scope.activity = response.data;
 		});

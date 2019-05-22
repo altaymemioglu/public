@@ -6,7 +6,7 @@ angular.module('hotel').controller('customerCtrl', ['$scope', '$http', function(
 	$scope.fillCustomerList = function () {
 		$http({
 			method : 'GET',
-			url : 'http://localhost:8080/reservationBoot/customers'
+			url : 'http://localhost:8080/reservationboot/customers'
 		}).then(function successCallback(response) {
 			$scope.customers = response.data._embedded.customers;
 		});
@@ -19,7 +19,7 @@ angular.module('hotel').controller('customerCtrl', ['$scope', '$http', function(
 	    var header = $("meta[name='_csrf_header']").attr("content");
 		$http({
 			method : 'POST',
-			url : 'http://localhost:8080/reservationBoot/services/customer/save',
+			url : 'http://localhost:8080/reservationboot/services/customer/save',
 			data : $scope.customer,
 		    headers : {
 		        'Content-Type' : 'application/json',
@@ -36,7 +36,7 @@ angular.module('hotel').controller('customerCtrl', ['$scope', '$http', function(
 	    var header = $("meta[name='_csrf_header']").attr("content");
 		$http({
 			method : 'POST',
-			url : 'http://localhost:8080/reservationBoot/services/customer/remove',
+			url : 'http://localhost:8080/reservationboot/services/customer/remove',
 			data : cust,
 		    headers : {
 		        'Content-Type' : 'application/json',
