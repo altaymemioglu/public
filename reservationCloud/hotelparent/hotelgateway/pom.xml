@@ -8,4 +8,9 @@
   <artifactId>hotelgateway</artifactId>
   <name>Gateway Module</name>
   <description>Demo Cloud Project Gateway Module</description>
+  
+  <properties>
+    <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version> <!-- To Fix Maven Unknown Configuration Problem Bug -->
+  </properties>
+  
 </project>
