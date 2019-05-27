@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "com.hotel.room.repository")
+@EnableJpaRepositories(basePackages = { "com.hotel.security.repository","com.hotel.room.repository" })
 @EnableJpaAuditing
 public class JpaConfig{
 	
@@ -36,7 +36,7 @@ public class JpaConfig{
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean entityManager = new LocalContainerEntityManagerFactoryBean();
 		entityManager.setDataSource(this.dataSource);
-		entityManager.setPackagesToScan(new String[] { "com.hotel.room.data" }); 
+		entityManager.setPackagesToScan(new String[] { "com.hotel.security.data","com.hotel.room.data" }); 
 		entityManager.setJpaVendorAdapter(jpaVendorAdapter());
 		entityManager.setJpaProperties(additionalProperties()); 
 		return entityManager;
