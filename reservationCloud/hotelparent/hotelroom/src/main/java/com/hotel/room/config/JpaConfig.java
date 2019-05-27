@@ -22,9 +22,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = { "com.hotel.security.repository","com.hotel.room.repository" })
+@EnableJpaRepositories(basePackages = {"com.hotel.security.repository","com.hotel.room.repository"})
 @EnableJpaAuditing
 public class JpaConfig{
+	
+	@Autowired
+	private JpaConfigProperties jpaConfigProperties;
 	
 	@Autowired
 	private DataSource dataSource;
@@ -50,10 +53,10 @@ public class JpaConfig{
 	@Bean
 	public DataSource dataSource(){
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("org.postgresql.Driver");
-		dataSource.setUrl("jdbc:postgresql://localhost:5432/hotel");
-       	dataSource.setUsername( "postgres" );
-       	//dataSource.setPassword(Environment.PASS, "root");
+		dataSource.setDriverClassName(jpaConfigProperties.getDriverclassname());
+		dataSource.setUrl(jpaConfigProperties.getDatasource_url());
+       	dataSource.setUsername(jpaConfigProperties.getDatasource_username());
+       	dataSource.setPassword(jpaConfigProperties.getDatasource_password());
        	return dataSource;
 	}
    
@@ -71,11 +74,11 @@ public class JpaConfig{
     
 	final Properties additionalProperties() {
 		Properties settings = new Properties();
-		settings.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
-		settings.put(Environment.SHOW_SQL, "true");
-		settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
-		settings.put(Environment.HBM2DDL_AUTO, "update");
-		settings.put("hibernate.jdbc.lob.non_contextual_creation", true);
+		settings.put(Environment.DIALECT, jpaConfigProperties.getDialect());
+		settings.put(Environment.SHOW_SQL, jpaConfigProperties.getShowsql());
+		settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, jpaConfigProperties.getCurrent_session_context_class());
+		settings.put(Environment.HBM2DDL_AUTO, jpaConfigProperties.getHbm2ddl_auto());
+		settings.put("hibernate.jdbc.lob.non_contextual_creation", jpaConfigProperties.getLob_non_contextual_creation());
 		return settings;
 	}
 }

@@ -58,5 +58,6 @@
 		<module>hotelgateway</module>
 		<module>hotelroom</module>
 		<module>hotelsecurity</module>
+		<module>hotelemployee</module>
 	</modules>
 </project>
