@@ -56,5 +56,6 @@
 		<module>hoteldiscovery</module>
 		<module>hotelconfig</module>
 		<module>hotelgateway</module>
+		<module>hotelroom</module>
 	</modules>
 </project>
