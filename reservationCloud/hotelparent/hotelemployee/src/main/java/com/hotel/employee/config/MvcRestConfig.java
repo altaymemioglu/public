@@ -1,4 +1,4 @@
-package com.hotel.room.config;
+package com.hotel.employee.config;
 
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.context.ApplicationContext;
@@ -12,8 +12,7 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguratio
 import org.springframework.http.MediaType;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 
-import com.hotel.data.Reservation;
-import com.hotel.data.Room;
+import com.hotel.data.Employee;
 
 @Configuration
 public class MvcRestConfig extends RepositoryRestMvcConfiguration {
@@ -33,9 +32,7 @@ public class MvcRestConfig extends RepositoryRestMvcConfiguration {
 		return new RepositoryRestConfigurer() {
 			@Override
 			public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
-				config.exposeIdsFor(Reservation.class);
-				config.exposeIdsFor(Room.class);
-			
+				config.exposeIdsFor(Employee.class);			
 				config.setRepositoryDetectionStrategy(RepositoryDetectionStrategy.RepositoryDetectionStrategies.ANNOTATED);
 			}
 		};

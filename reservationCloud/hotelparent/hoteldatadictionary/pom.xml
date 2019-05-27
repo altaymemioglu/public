@@ -5,26 +5,15 @@
     <artifactId>hotelparent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>hotelemployee</artifactId>
-  <name>Hotel Employee Module</name>
-  <description>Cloud Demo Application Employee MicroService</description>
+  <artifactId>hoteldatadictionary</artifactId>
+  <name>Hotel Data Dictionary Module</name>
   
-  	<properties>
+    <properties>
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version> <!-- To Fix Maven Unknown Configuration Problem Bug -->
 		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
 		<java.version>1.8</java.version>
 	</properties>
-
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<scope>runtime</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -32,33 +21,14 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jersey</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.hotel</groupId>
-			<artifactId>hotelsecurity</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		 <dependency>
-			<groupId>com.hotel</groupId>
-			<artifactId>hoteldatadictionary</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
 	</dependencies>
-
-	<dependencyManagement>
+  	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>

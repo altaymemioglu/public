@@ -12,8 +12,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.hotel.security.data.Role;
-import com.hotel.security.data.User;
+import com.hotel.data.Role;
+import com.hotel.data.User;
 import com.hotel.security.repository.UserRepository;
 
 @Service

@@ -1,4 +1,4 @@
-package com.hotel.security.data;
+package com.hotel.data;
 
 import java.util.Set;
 

@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Component;
 
-import com.hotel.room.data.Reservation;
-import com.hotel.room.data.Room;
+import com.hotel.data.Reservation;
+import com.hotel.data.Room;
 import com.hotel.room.repository.ReservationRepository;
 import com.hotel.room.repository.RoomRepository;
 

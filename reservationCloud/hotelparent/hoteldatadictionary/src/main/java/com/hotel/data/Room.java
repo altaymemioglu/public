@@ -1,4 +1,4 @@
-package com.hotel.room.data;
+package com.hotel.data;
 
 import java.io.Serializable;
 import java.util.Set;
