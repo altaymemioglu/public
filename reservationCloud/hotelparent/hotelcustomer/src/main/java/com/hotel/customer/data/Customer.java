@@ -1,4 +1,4 @@
-package com.hotel.employee.data;
+package com.hotel.customer.data;
 
 import java.io.Serializable;
 
@@ -13,21 +13,27 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "employee")
+@Table(name = "customer")
 @Getter
 @Setter
-public class Employee implements Serializable{
-	
+public class Customer implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private long employeeId;
+	private long customerId;
 	
 	@Column(name = "name")
 	private String name;
 	
 	@Column(name = "surname")
 	private String surname;
+	
+	@Column(name = "phone")
+	private String phone;
+	
+	@Column(name = "addressid")
+	private int addressid;
+	
 }

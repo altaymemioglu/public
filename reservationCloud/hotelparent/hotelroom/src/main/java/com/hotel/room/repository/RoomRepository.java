@@ -12,6 +12,6 @@ public interface RoomRepository extends JpaRepository<Room, Long>{
 	
 	@Cacheable("rooms")
 	Room findByNumber(@Param("number")int number);
-	Room findByFloor(@Param("floor")int floor);
-	Room findByCapacity(@Param("capacity")String capacity);
+	Room[] findByFloor(@Param("floor")int floor);
+	Room[] findByCapacity(@Param("capacity")String capacity);
 }

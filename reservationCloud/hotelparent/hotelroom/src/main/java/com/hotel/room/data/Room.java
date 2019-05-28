@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.hateoas.ResourceSupport;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,14 +22,14 @@ import lombok.Setter;
 @Table(name = "room")
 @Getter
 @Setter
-public class Room implements Serializable {
+public class Room extends ResourceSupport implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private long id;
+	private long roomId;
 
 	@Column(name = "number")
 	private int number;
@@ -52,4 +54,5 @@ public class Room implements Serializable {
 		room.setAttribute(attribute);
 		return room;
 	}
+
 }

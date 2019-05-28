@@ -60,5 +60,6 @@
 		<module>hotelsecurity</module>
 		<module>hotelemployee</module>
 		<module>hoteldatadictionary</module>
+		<module>hotelcustomer</module>
 	</modules>
 </project>
