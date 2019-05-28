@@ -14,9 +14,9 @@ import com.hotel.security.config.SecurityConfig;
 @EnableEurekaClient
 @Import({JpaConfig.class,MvcRestConfig.class,SecurityConfig.class})
 @ComponentScan(basePackages = "com.hotel.employee")
-public class EmployeeMicroService {
+public class EmployeeMicroservice {
 
 	public static void main(String[] args) {
-        SpringApplication.run(EmployeeMicroService.class, args);
+        SpringApplication.run(EmployeeMicroservice.class, args);
     }
 }

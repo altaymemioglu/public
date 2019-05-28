@@ -12,7 +12,7 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguratio
 import org.springframework.http.MediaType;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 
-import com.hotel.data.Employee;
+import com.hotel.employee.data.Employee;
 
 @Configuration
 public class MvcRestConfig extends RepositoryRestMvcConfiguration {

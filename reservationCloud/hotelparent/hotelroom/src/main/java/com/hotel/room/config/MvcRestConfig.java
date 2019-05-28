@@ -12,8 +12,8 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguratio
 import org.springframework.http.MediaType;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 
-import com.hotel.data.Reservation;
-import com.hotel.data.Room;
+import com.hotel.room.data.Reservation;
+import com.hotel.room.data.Room;
 
 @Configuration
 public class MvcRestConfig extends RepositoryRestMvcConfiguration {

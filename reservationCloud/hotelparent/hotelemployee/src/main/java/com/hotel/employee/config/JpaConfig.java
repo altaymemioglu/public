@@ -39,7 +39,7 @@ public class JpaConfig{
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean entityManager = new LocalContainerEntityManagerFactoryBean();
 		entityManager.setDataSource(this.dataSource);
-		entityManager.setPackagesToScan(new String[] { "com.hotel.data"}); 
+		entityManager.setPackagesToScan(new String[] { "com.hotel.security.data","com.hotel.employee.data"}); 
 		entityManager.setJpaVendorAdapter(jpaVendorAdapter());
 		entityManager.setJpaProperties(additionalProperties()); 
 		return entityManager;

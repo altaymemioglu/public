@@ -11,9 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hotel.data.Reservation;
-import com.hotel.data.Room;
 import com.hotel.room.bean.RoomBean;
+import com.hotel.room.data.Reservation;
+import com.hotel.room.data.Room;
 
 @RestController
 public class RoomServices {
