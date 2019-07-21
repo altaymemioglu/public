@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -22,19 +24,24 @@ public class Reservation implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+	@Positive
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private long id;
 	
+	@Positive
 	@Column(name = "customerid")
 	private long customerId;
 	
+	@Positive
 	@Column(name = "roomid")
 	private long roomId;
 	
+	@NotNull
 	@Column(name = "startdate")
 	private Date startDate;
 	
+	@NotNull
 	@Column(name = "enddate")
 	private Date endDate;
 	

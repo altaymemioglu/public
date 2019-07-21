@@ -12,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.PositiveOrZero;
 
 import org.springframework.hateoas.ResourceSupport;
 
@@ -27,16 +29,19 @@ public class Room extends ResourceSupport implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@Positive
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private long roomId;
 
+	@Positive
 	@Column(name = "number")
 	private int number;
 
 	@Column(name = "floor")
 	private int floor;
 	
+	@PositiveOrZero
 	@Column(name = "capacity")
 	private int capacity;
 	
