@@ -1,30 +1,32 @@
 # public
 I do hereby share some example projects using different technologies in Java.
 
-	Tomcat9
-	Maven
+	MicroServices
+	Spring
+		Spring Boot
+  		Spring Cloud
+		Spring Beans
+		Spring MVC
+		Spring Web Security
+		Spring Security over JPA
+		Spring Data JPA
+		Spring Data Rest
+		Spring Multi Language
+		Spring Data MongoDB
+		Spring Cache
+	AngularJS
+  	Netflix Eureka
+	JPA
 	JAX-RS
 	Jersey
-	Spring Beans
-	Spring MVC
-	Spring Web Security
-	Spring Security over JPA
+	Tomcat9
+	Maven
 	Hibernate
 	Hibernate Envers
 	PostGreSQL
-	AngularJS
 	BootStrap
 	Lombok
 	CSS
-	JPA
-	Spring Data JPA
-	Spring Data Rest
-	Spring Multi Language
-	Spring Data MongoDB
+	Javax Validation
 	slf4J Over log4J
-	Spring Cache
-  	Spring Boot
-  	Javax Validation
-  	Spring Cloud
-  	Netflix Eureka
-  	MicroServices
+	
