@@ -23,10 +23,8 @@ I do hereby share some example projects using different technologies in Java.
 	SpringData MongoDB
 	slf4J Over log4J
 	Spring Cache
-  SpringBoot
-  Javax Validation
-  Spring Cloud
-  Netflix Eureka
-  MicroService Architecture
-  
-  
+  	SpringBoot
+  	Javax Validation
+  	Spring Cloud
+  	Netflix Eureka
+  	MicroService Architecture
