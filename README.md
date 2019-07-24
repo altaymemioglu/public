@@ -5,26 +5,26 @@ I do hereby share some example projects using different technologies in Java.
 	Maven
 	JAX-RS
 	Jersey
-	SpringBeans
-	SpringMVC
-	SpringWebSecurity
-	SpringSecurity over JPA
+	Spring Beans
+	Spring MVC
+	Spring Web Security
+	Spring Security over JPA
 	Hibernate
 	Hibernate Envers
 	PostGreSQL
 	AngularJS
 	BootStrap
-	ProjectLombok
+	Lombok
 	CSS
 	JPA
-	SpringDataJPA
-	SpringDataRest
-	Spring MultiLanguage
-	SpringData MongoDB
+	Spring Data JPA
+	Spring Data Rest
+	Spring Multi Language
+	Spring Data MongoDB
 	slf4J Over log4J
 	Spring Cache
-  	SpringBoot
+  	Spring Boot
   	Javax Validation
   	Spring Cloud
   	Netflix Eureka
-  	MicroService Architecture
+  	MicroServices
