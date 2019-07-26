@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<%@page pageEncoding="UTF-8"%>
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html data-ng-app="hotel">
-
+<%@ page pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <head >
  <meta charset="utf-8"/> 
  <meta name="_csrf" content="${_csrf.token}"/>

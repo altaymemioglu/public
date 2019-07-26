@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <%@page pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -10,7 +9,7 @@
 .
 <p />
 .
-<div class="features-boxed">
+<div class="features-boxed" data-ng-app="hotel" data-ng-controller="welcomeCtrl">
 	<div class="container">
 		<div class="row justify-content-center features">
 			<div class="col-sm-6 col-md-5 col-lg-4 item">
