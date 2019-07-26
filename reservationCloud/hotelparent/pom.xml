@@ -52,7 +52,6 @@
 	</build>
 
 	<modules>
-		<module>hotelweb</module>
 		<module>hoteldiscovery</module>
 		<module>hotelconfig</module>
 		<module>hotelgateway</module>
