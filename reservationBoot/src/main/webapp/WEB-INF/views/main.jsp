@@ -21,14 +21,14 @@
 <script src="script/customerController.js"></script>
 <script src="script/helpController.js"></script>
 <script src="script/reservationController.js"></script>
-<script src="script/welcomeController.js"></script>
+<script src="script/homeController.js"></script>
 <script src="script/employeeController.js"></script>
 <script src="script/bootstrap-datepicker.js"></script>
 </head>
 <body style="background:url(style/background.jpg);background-size:cover">
 	<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
 		<div class="container">
-			<a href="#!welcome" class="navbar-brand"><spring:message code="main.menu.hotelname"/></a>
+			<a href="#!home" class="navbar-brand"><spring:message code="main.menu.hotelname"/></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarResponsive" aria-controls="navbarResponsive"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +40,7 @@
 						class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
 						id="themes"><spring:message code="main.menu.menu"/> <span class="caret"></span></a>
 						<div class="dropdown-menu" aria-labelledby="themes">
-							<a class="dropdown-item" href="#!welcome">
+							<a class="dropdown-item" href="#!home">
 								<spring:message code="main.menu.default"/>
 							</a>
 							<div class="dropdown-divider"></div>

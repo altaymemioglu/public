@@ -16,10 +16,10 @@ public class MvcController {
 		return model;
 	}
 	
-	@RequestMapping(value = { "/welcome" }, method = RequestMethod.GET)
-	public ModelAndView welcome1() {
+	@RequestMapping(value = { "/home" }, method = RequestMethod.GET)
+	public ModelAndView home() {
 		ModelAndView model = new ModelAndView();
-		model.setViewName("welcomePage");
+		model.setViewName("home");
 		return model;
 	}
 

@@ -93,23 +93,18 @@
 			<version>2.5.0</version>
 		</dependency>
 		
-		<!-- Tag libs support for view layer - Spring MVC -->
+		<!-- JSP and Tag libs support for view layer -->
 	
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
+		      <groupId>org.apache.tomcat.embed</groupId>
+		      <artifactId>tomcat-embed-jasper</artifactId>
+		      <scope>provided</scope>
 		</dependency>
+		
 		<dependency>
-		   <groupId>javax.servlet</groupId>
-		   <artifactId>jstl</artifactId>
-		</dependency>
-		<dependency>
-		   <groupId>org.eclipse.jetty</groupId>
-		   <artifactId>apache-jsp</artifactId>
-		</dependency>
-		<dependency>
-		   <groupId>org.eclipse.jetty</groupId>
-		   <artifactId>apache-jstl</artifactId>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>jstl</artifactId>
+		    <scope>runtime</scope>
 		</dependency>
 		
 	</dependencies>

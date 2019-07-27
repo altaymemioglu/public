@@ -26,16 +26,16 @@ app.config(function($routeProvider) {
 		templateUrl : "help",
 		controller : "helpCtrl"
 	})
-	.when("/welcome", {
-		templateUrl : "welcome",
-		controller : "welcomeCtrl"
+	.when("/home", {
+		templateUrl : "home",
+		controller : "homeCtrl"
 	})
 	.when("/employee", {
 		templateUrl : "employee",
 		controller : "employeeCtrl"
 	})
 	.otherwise({
-		redirectTo : "welcome"
+		redirectTo : "home"
 	})
 	;
 });

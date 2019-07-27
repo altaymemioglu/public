@@ -15,6 +15,7 @@
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version> <!-- To Fix Maven Unknown Configuration Problem Bug -->
 		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
 		<java.version>1.8</java.version>
+		<tomcat.version>9.0.17</tomcat.version>
 	</properties>
 
 	<dependencies>
@@ -39,10 +40,6 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jersey</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
