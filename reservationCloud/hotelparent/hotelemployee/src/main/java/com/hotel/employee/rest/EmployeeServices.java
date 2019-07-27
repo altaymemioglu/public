@@ -9,7 +9,7 @@ import com.hotel.employee.bean.EmployeeBean;
 import com.hotel.employee.data.Employee;
 
 @RestController
-@RequestMapping(value = "/services/employee", produces = "application/hal+json", consumes = "application/json") 
+@RequestMapping(value = "/services", produces = "application/hal+json", consumes = "application/json") 
 public class EmployeeServices {
 	
 	@Autowired

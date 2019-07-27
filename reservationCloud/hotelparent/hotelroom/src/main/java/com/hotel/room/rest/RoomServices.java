@@ -19,7 +19,7 @@ import com.hotel.room.data.Reservation;
 import com.hotel.room.data.Room;
 
 @RestController
-@RequestMapping(value = "/services/room", produces = "application/hal+json", consumes = "application/json") 
+@RequestMapping(value = "/services", produces = "application/hal+json", consumes = "application/json") 
 public class RoomServices {
 	
 	@Autowired

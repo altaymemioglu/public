@@ -15,6 +15,7 @@
 <link href="style/datepicker3.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<script src="script/cors.js"></script>
 <script src="script/module.js"></script>
 <script src="script/checkinController.js"></script>
 <script src="script/checkoutController.js"></script>
@@ -67,7 +68,7 @@
 				</ul>
 				<ul class="nav navbar-nav ml-auto">
 					<li class="nav-item">
-						<form id="logoutform" action="/reservation/logout" method="post">
+						<form id="logoutform" action="logout" method="post">
 							<input type="hidden" name="${_csrf.parameterName}"
 								value="${_csrf.token}" /> <a class="nav-link"
 								href="javascript:{}"
