@@ -78,7 +78,7 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-core</artifactId>
 			<!--<version>${org.springframework.version}</version> -->
-			<version>5.1.5.RELEASE</version>
+			<version>5.5.7</version>
 		</dependency>
 
 		<dependency>
